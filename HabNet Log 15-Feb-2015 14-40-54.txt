@@ -1,0 +1,9 @@
+Simulation Run Started: 15-Feb-2015 14:40:54
+Baseline Simulation Run
+{Undefined variable "lifeSupportUnitCCAA" or function "lifeSupportUnitCCAA.tick".
+
+Error in <a href="matlab:helpUtils.errorDocCallback('HDUwithEVAandPlantChamberUpdated', 'C:\Users\Sydney Do\Desktop\MIT\PhD Research\ICES2015\Benefits of ISFR Paper\Habitat Modeling\HDUwithEVAandPlantChamberUpdated.m', 827)" style="font-weight:bold">HDUwithEVAandPlantChamberUpdated</a> (<a href="matlab: opentoline('C:\Users\Sydney Do\Desktop\MIT\PhD Research\ICES2015\Benefits of ISFR Paper\Habitat Modeling\HDUwithEVAandPlantChamberUpdated.m',827,0)">line 827</a>)
+    PCMCCAAoutput(i) = lifeSupportUnitCCAA.tick;
+} 
+HDUwithEVAandPlantChamberUpdated
+Elapsed time is 4.657949 seconds.

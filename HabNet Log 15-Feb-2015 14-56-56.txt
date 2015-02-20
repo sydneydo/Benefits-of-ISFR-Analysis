@@ -1,0 +1,16 @@
+Simulation Run Started: 15-Feb-2015 14:56:56
+Baseline Simulation Run
+Lettuce crop has been killed at tick 62 due to insufficient [CO2]
+{Undefined function 'whitePotatoShelfWaterLevel' for input arguments of type 'double'.
+
+Error in <a href="matlab:helpUtils.errorDocCallback('HDUwithEVAandPlantChamberUpdated', 'C:\Users\Sydney Do\Desktop\MIT\PhD Research\ICES2015\Benefits of ISFR Paper\Habitat Modeling\HDUwithEVAandPlantChamberUpdated.m', 682)" style="font-weight:bold">HDUwithEVAandPlantChamberUpdated</a> (<a href="matlab: opentoline('C:\Users\Sydney Do\Desktop\MIT\PhD Research\ICES2015\Benefits of ISFR Paper\Habitat Modeling\HDUwithEVAandPlantChamberUpdated.m',682,0)">line 682</a>)
+        whitePotatoShelfWaterLevel = whitePotatoShelfWaterLevel(1:(i-1));
+} 
+i
+
+i =
+
+    63
+
+HDUwithEVAandPlantChamberUpdated
+Elapsed time is 4.553041 seconds.

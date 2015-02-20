@@ -1,0 +1,13 @@
+Simulation Run Started: 15-Feb-2015 16:53:49
+Baseline Simulation Run - No Lettuce
+Elapsed time is 98.473966 seconds.
+if system_dependent('IsDebugMode')==1, dbquit; end
+figure, plot(cropwaterstorelevel)
+cropwaterstorelevel(1)-cropwaterstorelevel(end)
+
+ans =
+
+   41.2127
+
+HDUwithEVAandPlantChamberUpdated
+Elapsed time is 15.664489 seconds.

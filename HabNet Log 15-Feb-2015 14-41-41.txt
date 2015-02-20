@@ -1,0 +1,166 @@
+Simulation Run Started: 15-Feb-2015 14:41:41
+Baseline Simulation Run
+Male 1 is currently in a fire risked state on tick: 1 in module: Loft
+Female 1 is currently in a fire risked state on tick: 1 in module: Loft
+Male 2 is currently in a fire risked state on tick: 1 in module: Loft
+Female 2 is currently in a fire risked state on tick: 1 in module: Loft
+Male 1 is currently in a fire risked state on tick: 2 in module: Loft
+Female 1 is currently in a fire risked state on tick: 2 in module: Loft
+Male 2 is currently in a fire risked state on tick: 2 in module: Loft
+Female 2 is currently in a fire risked state on tick: 2 in module: Loft
+Male 1 is currently in a fire risked state on tick: 3 in module: Loft
+Female 1 is currently in a fire risked state on tick: 3 in module: Loft
+Male 2 is currently in a fire risked state on tick: 3 in module: Loft
+Female 2 is currently in a fire risked state on tick: 3 in module: Loft
+Male 1 is currently in a fire risked state on tick: 4 in module: Loft
+Female 1 is currently in a fire risked state on tick: 4 in module: Loft
+Male 2 is currently in a fire risked state on tick: 4 in module: Loft
+Female 2 is currently in a fire risked state on tick: 4 in module: Loft
+Male 1 is currently in a fire risked state on tick: 5 in module: Loft
+Female 1 is currently in a fire risked state on tick: 5 in module: Loft
+Male 2 is currently in a fire risked state on tick: 5 in module: Loft
+Female 2 is currently in a fire risked state on tick: 5 in module: Loft
+Male 1 is currently in a fire risked state on tick: 6 in module: Loft
+Female 1 is currently in a fire risked state on tick: 6 in module: Loft
+Male 2 is currently in a fire risked state on tick: 6 in module: Loft
+Female 2 is currently in a fire risked state on tick: 6 in module: Loft
+Male 1 is currently in a fire risked state on tick: 7 in module: Loft
+Female 1 is currently in a fire risked state on tick: 7 in module: Loft
+Male 2 is currently in a fire risked state on tick: 7 in module: Loft
+Female 2 is currently in a fire risked state on tick: 7 in module: Loft
+Male 1 is currently in a fire risked state on tick: 8 in module: Laboratory - Pressurized Excursion Module
+Female 1 is currently in a fire risked state on tick: 8 in module: Laboratory - Pressurized Excursion Module
+Male 2 is currently in a fire risked state on tick: 8 in module: Pressurized Core Module
+Female 2 is currently in a fire risked state on tick: 8 in module: Pressurized Logistics Module
+Male 1 is currently in a fire risked state on tick: 9 in module: Laboratory - Pressurized Excursion Module
+Female 1 is currently in a fire risked state on tick: 9 in module: Laboratory - Pressurized Excursion Module
+Male 2 is currently in a fire risked state on tick: 9 in module: Pressurized Core Module
+Female 2 is currently in a fire risked state on tick: 9 in module: Laboratory - Pressurized Excursion Module
+Male 1 is currently in a fire risked state on tick: 10 in module: Laboratory - Pressurized Excursion Module
+Female 1 is currently in a fire risked state on tick: 10 in module: Pressurized Core Module
+Male 2 is currently in a fire risked state on tick: 10 in module: Loft
+Female 2 is currently in a fire risked state on tick: 10 in module: Pressurized Core Module
+Male 1 is currently in a fire risked state on tick: 11 in module: Pressurized Logistics Module
+Female 1 is currently in a fire risked state on tick: 11 in module: Pressurized Core Module
+Male 2 is currently in a fire risked state on tick: 11 in module: Laboratory - Pressurized Excursion Module
+Female 2 is currently in a fire risked state on tick: 11 in module: Pressurized Core Module
+Male 1 is currently in a fire risked state on tick: 12 in module: Pressurized Core Module
+Female 1 is currently in a fire risked state on tick: 12 in module: Loft
+Male 2 is currently in a fire risked state on tick: 12 in module: Pressurized Core Module
+Female 2 is currently in a fire risked state on tick: 12 in module: Laboratory - Pressurized Excursion Module
+Male 1 is currently in a fire risked state on tick: 13 in module: Pressurized Core Module
+Female 1 is currently in a fire risked state on tick: 13 in module: Laboratory - Pressurized Excursion Module
+Male 2 is currently in a fire risked state on tick: 13 in module: Pressurized Core Module
+Female 2 is currently in a fire risked state on tick: 13 in module: Laboratory - Pressurized Excursion Module
+Male 1 is currently in a fire risked state on tick: 14 in module: Laboratory - Pressurized Excursion Module
+Female 1 is currently in a fire risked state on tick: 14 in module: Pressurized Core Module
+Male 2 is currently in a fire risked state on tick: 14 in module: Loft
+Female 2 is currently in a fire risked state on tick: 14 in module: Loft
+Male 1 is currently in a fire risked state on tick: 15 in module: Loft
+Female 1 is currently in a fire risked state on tick: 15 in module: Pressurized Core Module
+Male 2 is currently in a fire risked state on tick: 15 in module: Loft
+Female 2 is currently in a fire risked state on tick: 15 in module: Pressurized Core Module
+Male 1 is currently in a fire risked state on tick: 16 in module: Laboratory - Pressurized Excursion Module
+Female 1 is currently in a fire risked state on tick: 16 in module: Loft
+Male 2 is currently in a fire risked state on tick: 16 in module: Laboratory - Pressurized Excursion Module
+Female 2 is currently in a fire risked state on tick: 16 in module: Laboratory - Pressurized Excursion Module
+Male 1 is currently in a fire risked state on tick: 17 in module: Laboratory - Pressurized Excursion Module
+Female 1 is currently in a fire risked state on tick: 17 in module: Loft
+Male 2 is currently in a fire risked state on tick: 17 in module: Loft
+Female 2 is currently in a fire risked state on tick: 17 in module: Laboratory - Pressurized Excursion Module
+Male 1 is currently in a fire risked state on tick: 18 in module: Pressurized Logistics Module
+Female 1 is currently in a fire risked state on tick: 18 in module: Pressurized Core Module
+Male 2 is currently in a fire risked state on tick: 18 in module: Loft
+Female 2 is currently in a fire risked state on tick: 18 in module: Loft
+Male 1 is currently in a fire risked state on tick: 19 in module: Pressurized Logistics Module
+Female 1 is currently in a fire risked state on tick: 19 in module: Loft
+Male 2 is currently in a fire risked state on tick: 19 in module: Laboratory - Pressurized Excursion Module
+Female 2 is currently in a fire risked state on tick: 19 in module: Loft
+Male 1 is currently in a fire risked state on tick: 20 in module: Loft
+Female 1 is currently in a fire risked state on tick: 20 in module: Loft
+Female 1 has died from oxygen flammability on tick: 20 with a risk value of: 0.090909
+Female 1 has been killed
+Male 2 is currently in a fire risked state on tick: 20 in module: Pressurized Logistics Module
+Female 2 is currently in a fire risked state on tick: 20 in module: Laboratory - Pressurized Excursion Module
+{Undefined function 'inflatableO2extracted' for input arguments of type 'double'.
+
+Error in <a href="matlab:helpUtils.errorDocCallback('HDUwithEVAandPlantChamberUpdated', 'C:\Users\Sydney Do\Desktop\MIT\PhD Research\ICES2015\Benefits of ISFR Paper\Habitat Modeling\HDUwithEVAandPlantChamberUpdated.m', 679)" style="font-weight:bold">HDUwithEVAandPlantChamberUpdated</a> (<a href="matlab: opentoline('C:\Users\Sydney Do\Desktop\MIT\PhD Research\ICES2015\Benefits of ISFR Paper\Habitat Modeling\HDUwithEVAandPlantChamberUpdated.m',679,0)">line 679</a>)
+        inflatableO2extracted = inflatableO2extracted(1:(i-1));
+} 
+Loft
+
+Loft = 
+
+  <a href="matlab:helpPopup SimEnvironmentImpl" style="font-weight:bold">SimEnvironmentImpl</a> with properties:
+
+                        name: 'Loft'
+                          id: 0
+                   tickcount: 20
+                      volume: 60000
+                 temperature: 23
+                   maxlumens: 50000
+           leakagePercentage: 0.0021
+              lightIntensity: 1.2500e+04
+                    pressure: 55.6481
+            RelativeHumidity: 0.4240
+              CondensedVapor: 0
+                O2Percentage: 0.3195
+               CO2Percentage: 9.0962e-04
+                N2Percentage: 0.6572
+             VaporPercentage: 0.0214
+             OtherPercentage: 9.7222e-04
+                  totalMoles: 1.3561e+03
+    DangerousOxygenThreshold: 0.3000
+                     O2Store: [1x1 StoreImpl]
+                    CO2Store: [1x1 StoreImpl]
+               NitrogenStore: [1x1 StoreImpl]
+                  VaporStore: [1x1 StoreImpl]
+                  OtherStore: [1x1 StoreImpl]
+           PotableWaterStore: [1x1 StoreImpl]
+              GreyWaterStore: [1x1 StoreImpl]
+             DirtyWaterStore: [1x1 StoreImpl]
+               DryWasteStore: [1x1 StoreImpl]
+                   FoodStore: [1x2 FoodStoreImpl]
+
+HDUwithEVAandPlantChamberUpdated
+close(h)
+{Undefined function or variable 'h'.
+} 
+if system_dependent('IsDebugMode')==1, dbquit; end
+Lab
+
+Lab = 
+
+  <a href="matlab:helpPopup SimEnvironmentImpl" style="font-weight:bold">SimEnvironmentImpl</a> with properties:
+
+                        name: 'Laboratory - Pressurized Excursion Module'
+                          id: 0
+                   tickcount: 0
+                      volume: 56000
+                 temperature: 23
+                   maxlumens: 50000
+           leakagePercentage: 0.0021
+    DangerousOxygenThreshold: 0.6000
+              lightIntensity: 0
+                    pressure: 55.0000
+            RelativeHumidity: 0
+              CondensedVapor: 0
+                O2Percentage: 0.3200
+               CO2Percentage: 0.0030
+                N2Percentage: 0.6760
+             VaporPercentage: 0
+             OtherPercentage: 1.0000e-03
+                  totalMoles: 1.2509e+03
+                     O2Store: [1x1 StoreImpl]
+                    CO2Store: [1x1 StoreImpl]
+               NitrogenStore: [1x1 StoreImpl]
+                  VaporStore: [1x1 StoreImpl]
+                  OtherStore: [1x1 StoreImpl]
+           PotableWaterStore: [1x1 StoreImpl]
+              GreyWaterStore: [1x1 StoreImpl]
+             DirtyWaterStore: [1x1 StoreImpl]
+               DryWasteStore: [1x1 StoreImpl]
+                   FoodStore: [1x2 FoodStoreImpl]
+
+HDUwithEVAandPlantChamberUpdated
+Elapsed time is 4.112930 seconds.

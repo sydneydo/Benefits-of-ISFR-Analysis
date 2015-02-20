@@ -1,0 +1,72 @@
+Simulation Run Started: 15-Feb-2015 14:58:53
+Baseline Simulation Run - No Lettuce
+Lettuce crop has been killed at tick 80 due to insufficient [CO2]
+Elapsed time is 94.483561 seconds.
+if system_dependent('IsDebugMode')==1, dbquit; end
+subplot(2,3,1), plot(t,LabO2level(t)./LabTotalMoles,t,LabCO2level./LabTotalMoles,t,LabN2level./LabTotalMoles,t,LabVaporlevel./LabTotalMoles,t,LabOtherlevel./LabTotalMoles,'LineWidth',2), title('Lab'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Molar Fraction')
+subplot(2,3,2), plot(t,PCMO2level(t)./PCMTotalMoles,t,PCMCO2level./PCMTotalMoles,t,PCMN2level./PCMTotalMoles,t,PCMVaporlevel./PCMTotalMoles,t,PCMOtherlevel./PCMTotalMoles,'LineWidth',2), title('PCM'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Molar Fraction')
+subplot(2,3,3), plot(t,PLMO2level(t)./PLMTotalMoles(t),t,PLMCO2level(t)./PLMTotalMoles(t),t,PLMN2level(t)./PLMTotalMoles(t),t,PLMVaporlevel(t)./PLMTotalMoles(t),t,PLMOtherlevel(t)./PLMTotalMoles(t),'LineWidth',2), title('PLM'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Molar Fraction')
+subplot(2,3,4), plot(t,LoftO2level(t)./LoftTotalMoles,t,LoftCO2level./LoftTotalMoles,t,LoftN2level./LoftTotalMoles,t,LoftVaporlevel./LoftTotalMoles,t,LoftOtherlevel./LoftTotalMoles,'LineWidth',2), title('Loft'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Molar Fraction')
+subplot(2,3,5), plot(t,SuitlockO2level(t)./SuitlockTotalMoles,t,SuitlockCO2level./SuitlockTotalMoles,t,SuitlockN2level./SuitlockTotalMoles,t,SuitlockVaporlevel./SuitlockTotalMoles,t,SuitlockOtherlevel./SuitlockTotalMoles,'LineWidth',2), title('Suitlock'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Molar Fraction')
+figure, plot(potablewaterstorelevel)
+figure, plot(o2storelevel)
+figure, plot(n2storelevel)
+subplot(3,3,1), plot(t,LabO2level(t)./LabTotalMoles(t).*LabPressure(t),t,LabCO2level(t)./LabTotalMoles(t).*LabPressure(t),t,LabN2level(t)./LabTotalMoles(t).*LabPressure(t),t,LabVaporlevel(t)./LabTotalMoles(t).*LabPressure(t),t,LabOtherlevel(t)./LabTotalMoles(t).*LabPressure(t),'LineWidth',2), title('Lab'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
+subplot(3,3,2), plot(t,PCMO2level(t)./PCMTotalMoles(t).*PCMPressure(t),t,PCMCO2level(t)./PCMTotalMoles(t).*PCMPressure(t),t,PCMN2level(t)./PCMTotalMoles(t).*PCMPressure(t),t,PCMVaporlevel(t)./PCMTotalMoles(t).*PCMPressure(t),t,PCMOtherlevel(t)./PCMTotalMoles(t).*PCMPressure(t),'LineWidth',2), title('PCM'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
+subplot(3,3,3), plot(t,PLMO2level(t)./PLMTotalMoles(t).*PLMPressure(t),t,PLMCO2level(t)./PLMTotalMoles(t).*PLMPressure(t),t,PLMN2level(t)./PLMTotalMoles(t).*PLMPressure(t),t,PLMVaporlevel(t)./PLMTotalMoles(t).*PLMPressure(t),t,PLMOtherlevel(t)./PLMTotalMoles(t).*PLMPressure(t),'LineWidth',2), title('PLM'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
+subplot(3,3,4), plot(t,LoftO2level(t)./LoftTotalMoles(t).*LoftPressure(t),t,LoftCO2level(t)./LoftTotalMoles(t).*LoftPressure(t),t,LoftN2level(t)./LoftTotalMoles(t).*LoftPressure(t),t,LoftVaporlevel(t)./LoftTotalMoles(t).*LoftPressure(t),t,LoftOtherlevel(t)./LoftTotalMoles(t).*LoftPressure(t),'LineWidth',2), title('Loft'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
+subplot(3,3,5), plot(t,SuitlockO2level(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),t,SuitlockCO2level./SuitlockTotalMoles.*SuitlockPressure(t),t,SuitlockN2level(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),t,SuitlockVaporlevel(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),t,SuitlockOtherlevel(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),'LineWidth',2), title('Suitlock'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
+figure, 
+subplot(2,3,1), plot(t,LabO2level(t)./LabTotalMoles(t).*LabPressure(t),t,LabCO2level(t)./LabTotalMoles(t).*LabPressure(t),t,LabN2level(t)./LabTotalMoles(t).*LabPressure(t),t,LabVaporlevel(t)./LabTotalMoles(t).*LabPressure(t),t,LabOtherlevel(t)./LabTotalMoles(t).*LabPressure(t),'LineWidth',2), title('Lab'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
+subplot(2,3,2), plot(t,PCMO2level(t)./PCMTotalMoles(t).*PCMPressure(t),t,PCMCO2level(t)./PCMTotalMoles(t).*PCMPressure(t),t,PCMN2level(t)./PCMTotalMoles(t).*PCMPressure(t),t,PCMVaporlevel(t)./PCMTotalMoles(t).*PCMPressure(t),t,PCMOtherlevel(t)./PCMTotalMoles(t).*PCMPressure(t),'LineWidth',2), title('PCM'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
+subplot(2,3,3), plot(t,PLMO2level(t)./PLMTotalMoles(t).*PLMPressure(t),t,PLMCO2level(t)./PLMTotalMoles(t).*PLMPressure(t),t,PLMN2level(t)./PLMTotalMoles(t).*PLMPressure(t),t,PLMVaporlevel(t)./PLMTotalMoles(t).*PLMPressure(t),t,PLMOtherlevel(t)./PLMTotalMoles(t).*PLMPressure(t),'LineWidth',2), title('PLM'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
+subplot(2,3,4), plot(t,LoftO2level(t)./LoftTotalMoles(t).*LoftPressure(t),t,LoftCO2level(t)./LoftTotalMoles(t).*LoftPressure(t),t,LoftN2level(t)./LoftTotalMoles(t).*LoftPressure(t),t,LoftVaporlevel(t)./LoftTotalMoles(t).*LoftPressure(t),t,LoftOtherlevel(t)./LoftTotalMoles(t).*LoftPressure(t),'LineWidth',2), title('Loft'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
+subplot(2,3,5), plot(t,SuitlockO2level(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),t,SuitlockCO2level./SuitlockTotalMoles.*SuitlockPressure(t),t,SuitlockN2level(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),t,SuitlockVaporlevel(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),t,SuitlockOtherlevel(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),'LineWidth',2), title('Suitlock'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
+0.32*55
+
+ans =
+
+   17.6000
+
+figure, 
+subplot(2,3,1), plot(t,LabO2level(t)./LabTotalMoles(t),'LineWidth',2), title('Lab'), grid on, xlabel('Time (hours)'), ylabel('O2 Molar Fraction')
+subplot(2,3,2), plot(t,PCMO2level(t)./PCMTotalMoles(t),'LineWidth',2), title('PCM'), grid on, xlabel('Time (hours)'), ylabel('O2 Molar Fraction')
+subplot(2,3,3), plot(t,PLMO2level(t)./PLMTotalMoles(t),'LineWidth',2), title('PLM'), grid on, xlabel('Time (hours)'), ylabel('O2 Molar Fraction')
+subplot(2,3,4), plot(t,LoftO2level(t)./LoftTotalMoles(t),'LineWidth',2), title('Loft'), grid on, xlabel('Time (hours)'), ylabel('O2 Molar Fraction')
+subplot(2,3,5), plot(t,SuitlockO2level(t)./SuitlockTotalMoles(t),'LineWidth',2), title('Suitlock'), grid on, xlabel('Time (hours)'), ylabel('O2 Molar Fraction')
+uiopen('C:\Users\Sydney Do\Desktop\MIT\PhD Research\IAC2014\Mars One Simulation\Mars-One-Feasibility-Study\Updated Analysis for Acta Astronautica\MarsOneFullHabWithEVAandPlantChamberUpdatedNoISRU.m',1)
+Lettuce
+
+ans = 
+
+  <a href="matlab:helpPopup Lettuce" style="font-weight:bold">Lettuce</a> with properties:
+
+                              Name: 'Lettuce'
+                              Type: 'Planophile'
+                    taInitialValue: 1200
+                   initialPPFValue: 300
+                   initialCO2Value: 1200
+             CarbonUseEfficiency24: 0.6250
+                               BCF: 0.4000
+                            CUEmax: 0.6250
+                       Photoperiod: 16
+                NominalPhotoperiod: 16
+              TimeAtOrganFormation: 1
+                                 N: 2.5000
+                            CQYMin: 0
+            TimeAtCanopySenescence: 31
+                TimeAtCropMaturity: 30
+                               OPF: 1.0800
+           FractionOfEdibleBiomass: 0.9500
+               CaloriesPerKilogram: 209.3959
+      EdibleFreshBasisWaterContent: 0.9498
+    InedibleFreshBasisWaterContent: 0.9000
+            CanopyClosureConstants: [1x25 double]
+       CanopyQuantumYieldConstants: [1x25 double]
+             LightCycleTemperature: 23
+     CarbohydrateFractionOfDryMass: 0.6553
+          ProteinFractionOfDryMass: 0.3105
+              FatFractionOfDryMass: 0.0342
+
+HDUwithEVAandPlantChamberUpdated
+Elapsed time is 4.577085 seconds.

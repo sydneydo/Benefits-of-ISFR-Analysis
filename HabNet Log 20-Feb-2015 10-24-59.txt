@@ -1,0 +1,14 @@
+Simulation Run Started: 20-Feb-2015 10:24:59
+Baseline Simulation Run - With Lettuce & All ISRU
+Elapsed time is 1301.886268 seconds.
+if system_dependent('IsDebugMode')==1, dbquit; end
+figure, plot(o2storelevel)
+figure, plot(carriedfoodstorelevel)
+carriedfoodstorelevel(end)
+
+ans =
+
+   28.9851
+
+figure, plot(potablewaterstorelevel)
+figure, plot(n2storelevel)

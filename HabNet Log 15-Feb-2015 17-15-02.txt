@@ -1,0 +1,25 @@
+Simulation Run Started: 15-Feb-2015 17:15:02
+Baseline Simulation Run - No Lettuce
+Insufficient resources available to fill current Store. Filling store with as many resources as is available
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 5603
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 5619
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 5622
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 5634
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 5637
+Current EVA has been skipped
+Male 2 is currently suffocating on tick: 5644 in module: Pressurized Core Module
+Female 2 is currently suffocating on tick: 5647 in module: Pressurized Core Module
+Female 1 is currently suffocating on tick: 5660 in module: Pressurized Core Module
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 5660
+Current EVA has been skipped
+Female 2 is currently suffocating on tick: 5662 in module: Pressurized Core Module
+Female 2 is currently suffocating on tick: 5663 in module: Pressurized Core Module
+Male 1 is currently suffocating on tick: 5664 in module: Pressurized Core Module
+Female 2 has died from lack of oxygen (hypoxia) on tick: 5665 with a risk value of: 0.46552
+Female 2 has been killed
+Elapsed time is 620.286018 seconds.
+Simulation Run Ended: 15-Feb-2015 17:25:23
