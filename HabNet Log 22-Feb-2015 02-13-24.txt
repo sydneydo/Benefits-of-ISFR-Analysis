@@ -1,0 +1,52 @@
+Simulation Run Started: 22-Feb-2015 02:13:25
+Baseline Simulation Run - With Lettuce & All ISRU
+Elapsed time is 5.950669 seconds.
+if system_dependent('IsDebugMode')==1, dbquit; end
+FailCommand
+
+FailCommand = 
+
+  Columns 1 through 2
+
+    'LabPCA.Error=1;'    'LoftPCA.Error=1;'
+
+  Column 3
+
+    'PCMPCA.Error=1;'
+
+FailureTick
+
+FailureTick =
+
+     1
+
+ii
+{Undefined function or variable 'ii'.
+} 
+i
+
+i =
+
+        1000
+
+LabPCA.Error
+
+ans =
+
+     0
+
+for ii = 1:length(FailCommand)
+            eval(FailCommand{ii});
+            disp(['Fail invoked for ',ErrorList{SystemToFail(ii)},' at tick ',num2str(i)])
+        end
+Fail invoked for LabPCA at tick 1000
+Fail invoked for LoftPCA at tick 1000
+Fail invoked for PCMPCA at tick 1000
+ LabPCA.Error
+
+ans =
+
+     1
+
+HDUnominalWithFailureInvoke
+Elapsed time is 19.253482 seconds.

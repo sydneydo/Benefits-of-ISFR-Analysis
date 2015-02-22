@@ -54,7 +54,7 @@ classdef ISSinjectorImpl < handle
         idealGasConstant = 8.314;        % J/K/mol
         O2molarMass = 2*15.999;          % g/mol
         CO2molarMass = 12.011+2*15.999;   % g/mol
-        N2molarMass = 2*14.007           % g/mol
+        N2molarMass = 2*14.007;          % g/mol
         VapormolarMass = 2*1.008+15.999; % g/mol
         OthermolarMass =  0.265*2*15.999 + (1-0.265)*2*14.007;	% g/mol (assuming that it is equal to the average molecular mass of the ideal 70.3kPa/26.5% O2 mixture
     end

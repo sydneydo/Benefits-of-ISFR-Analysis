@@ -1,0 +1,66 @@
+Simulation Run Started: 21-Feb-2015 19:05:29
+Baseline Simulation Run - With Lettuce & All ISRU
+Elapsed time is 17.984998 seconds.
+if system_dependent('IsDebugMode')==1, dbquit; end
+EMUfeedwaterReservoir
+
+EMUfeedwaterReservoir = 
+
+  <a href="matlab:helpPopup StoreImpl" style="font-weight:bold">StoreImpl</a> with properties:
+
+             contents: 'PLSS Feedwater Reservoir'
+                 type: 'Material'
+            tickcount: 0
+         currentLevel: 5.7055
+      currentCapacity: 4.5359
+             overflow: 1.2544
+                 pipe: 0
+    resupplyFrequency: 0
+       resupplyAmount: 0
+
+EMUfeedwaterReservoir
+
+EMUfeedwaterReservoir = 
+
+  <a href="matlab:helpPopup StoreImpl" style="font-weight:bold">StoreImpl</a> with properties:
+
+             contents: 'PLSS Feedwater Reservoir'
+                 type: 'Material'
+            tickcount: 0
+         currentLevel: 5.7055
+      currentCapacity: 4.5359
+             overflow: 1.2544
+                 pipe: 0
+    resupplyFrequency: 0
+       resupplyAmount: 0
+
+i
+
+i =
+
+    66
+
+EMUfeedwaterReservoir
+
+EMUfeedwaterReservoir = 
+
+  <a href="matlab:helpPopup StoreImpl" style="font-weight:bold">StoreImpl</a> with properties:
+
+             contents: 'PLSS Feedwater Reservoir'
+                 type: 'Material'
+            tickcount: 0
+         currentLevel: 5.7055
+      currentCapacity: 4.5359
+             overflow: 1.2544
+                 pipe: 0
+    resupplyFrequency: 0
+       resupplyAmount: 0
+
+i
+
+i =
+
+    66
+
+HDUnominalWithFailureInvoke
+Elapsed time is 19.339730 seconds.

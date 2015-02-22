@@ -1,7 +1,7 @@
 %%  Habitation Development Unit / Human Exploration Research Analog Default Simulation Case
 %   By: Sydney Do (sydneydo@mit.edu)
 %   Date Created: 2/7/2015
-%   Last Updated: 2/9/2015
+%   Last Updated: 2/21/2015
 %
 %   Simulation Notes: 
 %   Code to model baseline architecture for the ICES2015 paper entitled:
@@ -10,6 +10,10 @@
 %   (one Martian synodic period). The desired output is the rate of
 %   resupply required over time, as well as the survival time of the crew
 %   when a failure of a particular system occurs
+%
+%   UPDATE 2/21/2015
+%   - Code added to invoke a failure at a desired time within the
+%   simulation time horizon
 %
 %   UPDATE 12/21/2014
 %   - Corrected plant model code (ShelfImpl3.m - updated 12/20/2014) incorporated
@@ -74,7 +78,32 @@ o2fireRiskMolarFraction = 0.6;      % overwrite default value of 0.3 since targe
 
 % TotalPPO2Targeted = TargetO2MolarFraction*TotalAtmPressureTargeted;               % targeted O2 partial pressure, in kPa (converted from 26.5% O2)
 
-% ISRU Production Rates
+%% Invoke One-At-A-Time Failure at Given Tick
+FailureTick = 1;
+
+ErrorList = {'LabPCA','LoftPCA','PCMPCA','SuitlockPCA','PLMPPRV',...
+    'LabCCAA','LoftCCAA','PCMCCAA','SuitlockCCAA','mainvccr','ogs',...
+    'crs.CompressorError','crs.ReactorError','crs.SeparatorError',...
+    'waterRS.WPAerror','waterRS.UPAerror','Lab2PCMFan','PLM2PCMFan',...
+    'Loft2PCMFan','Lab2AirlockFan'};
+
+SystemToFail = 1:4;%[1,12,5,14];
+
+% Determine failure command based on type of technology
+
+FailCommand = cell(1,length(SystemToFail));
+failcount = 0;
+for j = 1:length(SystemToFail)
+    if SystemToFail(j) == 12 || SystemToFail(j) == 13 || ...
+            SystemToFail(j) == 14 || SystemToFail(j) == 15 || ...
+            SystemToFail(j) == 16
+        FailCommand{j} = [ErrorList{SystemToFail(j)},'=1;'];
+    else
+        FailCommand{j} = [ErrorList{SystemToFail(j)},'.Error=1;'];
+    end
+end
+
+%% ISRU Production Rates
 isruAddedWater = 0.106;      % Liters/hour
 % isruAddedCropWater = 1.11;  % Liter/hour
 isruAddedO2 = 1.1;            % moles/hour
@@ -85,7 +114,7 @@ isruAddedCropWater = 0;  % Liter/hour
 % isruAddedO2 = 0;            % moles/hour
 % isruAddedN2 = 0;          % moles/hour
 
-% EMU
+%% EMU
 EMUco2RemovalTechnology = 'RCA';  % options are RCA or METOX
 EMUurineManagementTechnology = 'UCTA';  % options are MAG or UCTA
 
@@ -597,10 +626,10 @@ diary(['HabNet Log ',timestamp,'.txt'])
 disp(['Simulation Run Started: ',datestr(clock)]);
 disp('Baseline Simulation Run - With Lettuce & All ISRU')
 
-for i = 1:simtime
+for i = 1:1000%simtime
         
-    if astro1.alive == 0 || astro2.alive == 0 || astro3.alive == 0 || astro4.alive == 0 %||...
-%             LettuceShelf.hasDied >= 1
+    if astro1.alive == 0 || astro2.alive == 0 || astro3.alive == 0 || astro4.alive == 0 ||...
+            LettuceShelf.hasDied >= 1
 
 %             sum([WhitePotatoShelves.Shelves.hasDied]) >= 1 ||...
 %             sum([PeanutShelves.Shelves.hasDied]) >= 1 || ...
@@ -722,6 +751,14 @@ for i = 1:simtime
         return
     end
 
+    %% Invoke Fail
+    if i == FailureTick
+        for ii = 1:length(FailCommand)
+            eval(FailCommand{ii});
+            disp(['Failure invoked in ',ErrorList{SystemToFail(ii)},' at tick ',num2str(i)])
+        end
+    end
+    
     %% Record Data
     % Resource Stores
     o2storelevel(i) = O2Store.currentLevel;
@@ -996,7 +1033,7 @@ subplot(2,3,1), plot(t,LabO2level(t)./LabTotalMoles(t).*LabPressure(t),t,LabCO2l
 subplot(2,3,2), plot(t,PCMO2level(t)./PCMTotalMoles(t).*PCMPressure(t),t,PCMCO2level(t)./PCMTotalMoles(t).*PCMPressure(t),t,PCMN2level(t)./PCMTotalMoles(t).*PCMPressure(t),t,PCMVaporlevel(t)./PCMTotalMoles(t).*PCMPressure(t),t,PCMOtherlevel(t)./PCMTotalMoles(t).*PCMPressure(t),'LineWidth',2), title('PCM'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
 subplot(2,3,3), plot(t,PLMO2level(t)./PLMTotalMoles(t).*PLMPressure(t),t,PLMCO2level(t)./PLMTotalMoles(t).*PLMPressure(t),t,PLMN2level(t)./PLMTotalMoles(t).*PLMPressure(t),t,PLMVaporlevel(t)./PLMTotalMoles(t).*PLMPressure(t),t,PLMOtherlevel(t)./PLMTotalMoles(t).*PLMPressure(t),'LineWidth',2), title('PLM'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
 subplot(2,3,4), plot(t,LoftO2level(t)./LoftTotalMoles(t).*LoftPressure(t),t,LoftCO2level(t)./LoftTotalMoles(t).*LoftPressure(t),t,LoftN2level(t)./LoftTotalMoles(t).*LoftPressure(t),t,LoftVaporlevel(t)./LoftTotalMoles(t).*LoftPressure(t),t,LoftOtherlevel(t)./LoftTotalMoles(t).*LoftPressure(t),'LineWidth',2), title('Loft'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
-subplot(2,3,5), plot(t,SuitlockO2level(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),t,SuitlockCO2level./SuitlockTotalMoles.*SuitlockPressure(t),t,SuitlockN2level(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),t,SuitlockVaporlevel(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),t,SuitlockOtherlevel(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),'LineWidth',2), title('Suitlock'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
+subplot(2,3,5), plot(t,SuitlockO2level(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),t,SuitlockCO2level(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),t,SuitlockN2level(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),t,SuitlockVaporlevel(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),t,SuitlockOtherlevel(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),'LineWidth',2), title('Suitlock'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
 
 t = 1:(length(o2storelevel));
 
@@ -1061,7 +1098,7 @@ figure,
 subplot(2,2,1), plot(t,LabPressure(t),'LineWidth',2), title('Inflatable 1'), grid on, xlabel('Time (hours)'), ylabel('Total Pressure')
 subplot(2,2,2), plot(t,PCMPressure(t),'LineWidth',2), title('Living Unit 1'), grid on, xlabel('Time (hours)'), ylabel('Total Pressure')
 subplot(2,2,3), plot(t,lifeSupportUnitPressure(t),'LineWidth',2), title('Life Support Unit 1'), grid on, xlabel('Time (hours)'), ylabel('Total Pressure')
-subplot(2,2,4), plot(t,PLMPressure(t),'LineWidth',2), title('Cargo Unit 1'), grid on, xlabel('Time (hours)'), ylabel('Total Pressure')
+subplot(2,2,4), plot(t,PLMPressure(t),'LineWidth',2), title('PLM'), grid on, xlabel('Time (hours)'), ylabel('Total Pressure')
 
 % % Environmental N2 Store plots
 % figure, 

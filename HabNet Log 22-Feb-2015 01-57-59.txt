@@ -1,0 +1,85 @@
+Simulation Run Started: 22-Feb-2015 01:57:59
+Baseline Simulation Run - With Lettuce & All ISRU
+    'Fail invoked for '    'LabPCA'    ' at tick '    '1'
+
+{Operation terminated by user during <a href="matlab:helpUtils.errorDocCallback('waitbar', 'C:\Program Files\MATLAB\R2013a\toolbox\matlab\uitools\waitbar.m', 111)" style="font-weight:bold">waitbar</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2013a\toolbox\matlab\uitools\waitbar.m',111,0)">line 111</a>)
+
+
+In <a href="matlab:helpUtils.errorDocCallback('HDUnominalWithFailureInvoke', 'C:\Users\Sydney Do\Desktop\MIT\PhD Research\ICES2015\Benefits of ISFR Paper\Benefits-of-ISFR-Analysis\HDUnominalWithFailureInvoke.m', 1007)" style="font-weight:bold">HDUnominalWithFailureInvoke</a> (<a href="matlab: opentoline('C:\Users\Sydney Do\Desktop\MIT\PhD Research\ICES2015\Benefits of ISFR Paper\Benefits-of-ISFR-Analysis\HDUnominalWithFailureInvoke.m',1007,0)">line 1007</a>)
+        waitbar(i/simtime,h,['Current tick: ',num2str(i),' |
+        Time Elapsed: ',num2str(round(toc)),'sec']);
+} 
+close(h)
+disp(['Fail invoked for ',ErrorList{SystemToFail(ii)},' at tick ',num2str(i)])
+Fail invoked for LabPCA at tick 1100
+i
+
+i =
+
+        1100
+
+t = 1:1000;
+figure, 
+subplot(2,3,1), plot(t,LabO2level(t)./LabTotalMoles(t).*LabPressure(t),t,LabCO2level(t)./LabTotalMoles(t).*LabPressure(t),t,LabN2level(t)./LabTotalMoles(t).*LabPressure(t),t,LabVaporlevel(t)./LabTotalMoles(t).*LabPressure(t),t,LabOtherlevel(t)./LabTotalMoles(t).*LabPressure(t),'LineWidth',2), title('Lab'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
+subplot(2,3,2), plot(t,PCMO2level(t)./PCMTotalMoles(t).*PCMPressure(t),t,PCMCO2level(t)./PCMTotalMoles(t).*PCMPressure(t),t,PCMN2level(t)./PCMTotalMoles(t).*PCMPressure(t),t,PCMVaporlevel(t)./PCMTotalMoles(t).*PCMPressure(t),t,PCMOtherlevel(t)./PCMTotalMoles(t).*PCMPressure(t),'LineWidth',2), title('PCM'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
+subplot(2,3,3), plot(t,PLMO2level(t)./PLMTotalMoles(t).*PLMPressure(t),t,PLMCO2level(t)./PLMTotalMoles(t).*PLMPressure(t),t,PLMN2level(t)./PLMTotalMoles(t).*PLMPressure(t),t,PLMVaporlevel(t)./PLMTotalMoles(t).*PLMPressure(t),t,PLMOtherlevel(t)./PLMTotalMoles(t).*PLMPressure(t),'LineWidth',2), title('PLM'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
+subplot(2,3,4), plot(t,LoftO2level(t)./LoftTotalMoles(t).*LoftPressure(t),t,LoftCO2level(t)./LoftTotalMoles(t).*LoftPressure(t),t,LoftN2level(t)./LoftTotalMoles(t).*LoftPressure(t),t,LoftVaporlevel(t)./LoftTotalMoles(t).*LoftPressure(t),t,LoftOtherlevel(t)./LoftTotalMoles(t).*LoftPressure(t),'LineWidth',2), title('Loft'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
+subplot(2,3,5), plot(t,SuitlockO2level(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),t,SuitlockCO2level./SuitlockTotalMoles.*SuitlockPressure(t),t,SuitlockN2level(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),t,SuitlockVaporlevel(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),t,SuitlockOtherlevel(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),'LineWidth',2), title('Suitlock'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
+{Error using <a href="matlab:helpUtils.errorDocCallback('times')" style="font-weight:bold"> .* </a>
+Matrix dimensions must agree.
+} 
+length(SuitlockPressure)
+
+ans =
+
+       19000
+
+figure, 
+subplot(2,3,1), plot(t,LabO2level(t)./LabTotalMoles(t).*LabPressure(t),t,LabCO2level(t)./LabTotalMoles(t).*LabPressure(t),t,LabN2level(t)./LabTotalMoles(t).*LabPressure(t),t,LabVaporlevel(t)./LabTotalMoles(t).*LabPressure(t),t,LabOtherlevel(t)./LabTotalMoles(t).*LabPressure(t),'LineWidth',2), title('Lab'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
+subplot(2,3,2), plot(t,PCMO2level(t)./PCMTotalMoles(t).*PCMPressure(t),t,PCMCO2level(t)./PCMTotalMoles(t).*PCMPressure(t),t,PCMN2level(t)./PCMTotalMoles(t).*PCMPressure(t),t,PCMVaporlevel(t)./PCMTotalMoles(t).*PCMPressure(t),t,PCMOtherlevel(t)./PCMTotalMoles(t).*PCMPressure(t),'LineWidth',2), title('PCM'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
+subplot(2,3,3), plot(t,PLMO2level(t)./PLMTotalMoles(t).*PLMPressure(t),t,PLMCO2level(t)./PLMTotalMoles(t).*PLMPressure(t),t,PLMN2level(t)./PLMTotalMoles(t).*PLMPressure(t),t,PLMVaporlevel(t)./PLMTotalMoles(t).*PLMPressure(t),t,PLMOtherlevel(t)./PLMTotalMoles(t).*PLMPressure(t),'LineWidth',2), title('PLM'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
+subplot(2,3,4), plot(t,LoftO2level(t)./LoftTotalMoles(t).*LoftPressure(t),t,LoftCO2level(t)./LoftTotalMoles(t).*LoftPressure(t),t,LoftN2level(t)./LoftTotalMoles(t).*LoftPressure(t),t,LoftVaporlevel(t)./LoftTotalMoles(t).*LoftPressure(t),t,LoftOtherlevel(t)./LoftTotalMoles(t).*LoftPressure(t),'LineWidth',2), title('Loft'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
+subplot(2,3,5), plot(t,SuitlockO2level(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),t,SuitlockCO2level(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),t,SuitlockN2level(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),t,SuitlockVaporlevel(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),t,SuitlockOtherlevel(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),'LineWidth',2), title('Suitlock'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
+clc
+figure, plot(o2storelevel(t))
+figure, plot(n2storelevel(t))
+limitingFlowRateInKg = 0.09*60
+
+limitingFlowRateInKg =
+
+    5.4000
+
+O2molarMass = 2*15.999
+
+O2molarMass =
+
+   31.9980
+
+N2molarMass = 2*14.007
+
+N2molarMass =
+
+   28.0140
+
+O2limitingFlowRateInMoles = limitingFlowRateInKg*1E3/O2molarMass
+
+O2limitingFlowRateInMoles =
+
+  168.7605
+
+                N2limitingFlowRateInMoles = limitingFlowRateInKg*1E3/N2molarMass
+
+N2limitingFlowRateInMoles =
+
+  192.7608
+
+figure, plot(diff(o2storelevel(t)))
+figure, plot(diff(n2storelevel(t)))
+min(diff(n2storelevel(t)))
+
+ans =
+
+  -43.3301
+
+HDUnominalWithFailureInvoke
+Elapsed time is 17.171615 seconds.

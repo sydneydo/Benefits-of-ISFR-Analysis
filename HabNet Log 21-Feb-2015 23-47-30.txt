@@ -1,0 +1,221 @@
+Simulation Run Started: 21-Feb-2015 23:47:30
+Baseline Simulation Run - With Lettuce & All ISRU
+Elapsed time is 102.335246 seconds.
+if system_dependent('IsDebugMode')==1, dbquit; end
+EMUfeedwaterReservoir
+
+EMUfeedwaterReservoir = 
+
+  <a href="matlab:helpPopup StoreImpl" style="font-weight:bold">StoreImpl</a> with properties:
+
+             contents: 'PLSS Feedwater Reservoir'
+                 type: 'Material'
+            tickcount: 0
+         currentLevel: 9.0718
+      currentCapacity: 9.0718
+             overflow: 37.2741
+                 pipe: 0
+    resupplyFrequency: 0
+       resupplyAmount: 0
+
+finalFeedwaterTanklevel
+
+finalFeedwaterTanklevel =
+
+    5.7055
+
+plssfeedwatertanklevelRCA
+
+plssfeedwatertanklevelRCA =
+
+    2.8528
+
+plssfeedwatertanklevelMETOX
+
+plssfeedwatertanklevelMETOX =
+
+    0.9259
+
+figure, plot(reservoirFillLevel)
+TechnologyList = {'LabPCA','LoftPCA','PCMPCA','SuitlockPCA','PLMPPRV',...
+    'LabCCAA','LoftCCAA','PCMCCAA','SuitlockCCAA','mainvccr','ogs',...
+    'crs','waterRS','Lab2PCMFan','PLM2PCMFan','Loft2PCMFan','Lab2AirlockFan'}
+
+TechnologyList = 
+
+  Columns 1 through 7
+
+    'LabPCA'    'LoftPCA'    'PCMPCA'    'SuitlockPCA'    'PLMPPRV'    'LabCCAA'    'LoftCCAA'
+
+  Columns 8 through 14
+
+    'PCMCCAA'    'SuitlockCCAA'    'mainvccr'    'ogs'    'crs'    'waterRS'    'Lab2PCMFan'
+
+  Columns 15 through 17
+
+    'PLM2PCMFan'    'Loft2PCMFan'    'Lab2AirlockFan'
+
+TechnologyList{1}
+
+ans =
+
+LabPCA
+
+eval(TechnologyList{1})
+
+LabPCA = 
+
+  <a href="matlab:helpPopup ISSinjectorImpl" style="font-weight:bold">ISSinjectorImpl</a> with properties:
+
+                 OperatingMode: 'PCA'
+           TargetTotalPressure: 55
+       TargetO2PartialPressure: 17.6000
+         TargetO2MolarFraction: 0.3200
+                      O2Vented: 125.4049
+                     CO2Vented: 0.5562
+                      N2Vented: 255.6083
+                   VaporVented: 7.8858
+              OtherGasesVented: 0.2848
+                      O2Source: [1x1 ResourceUseDefinitionImpl]
+                      N2Source: [1x1 ResourceUseDefinitionImpl]
+                   Environment: [1x1 SimEnvironmentImpl]
+                         Error: 0
+      UpperPPO2PercentageLimit: 0.6000
+    PartialPressureBoundingBox: 1.3790
+              VentPortDiameter: 0.0560
+           MarsMeanAtmPressure: 0.6360
+            MarsMeanAtmDensity: 0.0200
+              idealGasConstant: 8.3140
+                   O2molarMass: 31.9980
+                  CO2molarMass: 44.0090
+                   N2molarMass: 28.0140
+                VapormolarMass: 18.0150
+                OthermolarMass: 29.0698
+
+ErrorList = {'LabPCA','LoftPCA','PCMPCA','SuitlockPCA','PLMPPRV',...
+    'LabCCAA','LoftCCAA','PCMCCAA','SuitlockCCAA','mainvccr','ogs',...
+    'crs.CompressorError','crs.ReactorError','crs.SeparatorError',...
+    'waterRS.WPAerror','waterRS.UPAerror','Lab2PCMFan','PLM2PCMFan',...
+    'Loft2PCMFan','Lab2AirlockFan'};
+
+SystemToFail = [1,12,5,14];
+
+% Determine failure command based on type of technology
+
+FailCommand = cell(length(SystemToFail));
+failcount = 0;
+for j = 1:length(SystemToFail)
+    if SystemToFail(j) == 12 || SystemToFail(j) == 13 || ...
+            SystemToFail(j) == 14 || SystemToFail(j) == 15 || ...
+            SystemToFail(j) == 16
+        FailCommand{j} = [ErrorList{SystemToFail(j)},'=1;'];
+    else
+        FailCommand{j} = [ErrorList{SystemToFail(j)},'.Error=1;'];
+    end
+end
+FailCommand
+
+FailCommand = 
+
+    'LabPCA.Error=1;'     []    []    []
+           [1x22 char]    []    []    []
+    'PLMPPRV.Error=1;'    []    []    []
+           [1x21 char]    []    []    []
+
+SystemToFail = [1,12,5,14];
+
+% Determine failure command based on type of technology
+
+FailCommand = cell(1,length(SystemToFail));
+failcount = 0;
+for j = 1:length(SystemToFail)
+    if SystemToFail(j) == 12 || SystemToFail(j) == 13 || ...
+            SystemToFail(j) == 14 || SystemToFail(j) == 15 || ...
+            SystemToFail(j) == 16
+        FailCommand{j} = [ErrorList{SystemToFail(j)},'=1;'];
+    else
+        FailCommand{j} = [ErrorList{SystemToFail(j)},'.Error=1;'];
+    end
+end
+FailCommand
+
+FailCommand = 
+
+    'LabPCA.Error=1;'    [1x22 char]    'PLMPPRV.Error=1;'    [1x21 char]
+
+FailCommand{2}
+
+ans =
+
+crs.CompressorError=1;
+
+FailCommand{4}
+
+ans =
+
+crs.SeparatorError=1;
+
+length(FailCommand)
+
+ans =
+
+     4
+
+SystemToFail = 1;%[1,12,5,14];
+
+% Determine failure command based on type of technology
+
+FailCommand = cell(1,length(SystemToFail));
+failcount = 0;
+for j = 1:length(SystemToFail)
+    if SystemToFail(j) == 12 || SystemToFail(j) == 13 || ...
+            SystemToFail(j) == 14 || SystemToFail(j) == 15 || ...
+            SystemToFail(j) == 16
+        FailCommand{j} = [ErrorList{SystemToFail(j)},'=1;'];
+    else
+        FailCommand{j} = [ErrorList{SystemToFail(j)},'.Error=1;'];
+    end
+end
+FailCommand
+
+FailCommand = 
+
+    'LabPCA.Error=1;'
+
+eval(FailCommand)
+{Undefined function 'eval' for input arguments of type 'cell'.
+} 
+eval(FailCommand{1})
+LabPCA
+
+LabPCA = 
+
+  <a href="matlab:helpPopup ISSinjectorImpl" style="font-weight:bold">ISSinjectorImpl</a> with properties:
+
+                 OperatingMode: 'PCA'
+           TargetTotalPressure: 55
+       TargetO2PartialPressure: 17.6000
+         TargetO2MolarFraction: 0.3200
+                      O2Vented: 125.4049
+                     CO2Vented: 0.5562
+                      N2Vented: 255.6083
+                   VaporVented: 7.8858
+              OtherGasesVented: 0.2848
+                      O2Source: [1x1 ResourceUseDefinitionImpl]
+                      N2Source: [1x1 ResourceUseDefinitionImpl]
+                   Environment: [1x1 SimEnvironmentImpl]
+                         Error: 1
+      UpperPPO2PercentageLimit: 0.6000
+    PartialPressureBoundingBox: 1.3790
+              VentPortDiameter: 0.0560
+           MarsMeanAtmPressure: 0.6360
+            MarsMeanAtmDensity: 0.0200
+              idealGasConstant: 8.3140
+                   O2molarMass: 31.9980
+                  CO2molarMass: 44.0090
+                   N2molarMass: 28.0140
+                VapormolarMass: 18.0150
+                OthermolarMass: 29.0698
+
+HDUnominalWithFailureInvoke
+Elapsed time is 23.254293 seconds.
