@@ -1,0 +1,16 @@
+Simulation Run Started: 23-Feb-2015 14:21:09
+Baseline Simulation Run - With Lettuce & All ISRU
+Failure invoked in LoftCCAA at tick 1
+Failure invoked in PCMCCAA at tick 1
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 4979
+Current EVA has been skipped
+Male 1 is currently suffocating on tick: 4992 in module: Laboratory - Pressurized Excursion Module
+Male 2 is currently suffocating on tick: 4992 in module: Laboratory - Pressurized Excursion Module
+Male 2 is currently suffocating on tick: 4994 in module: Laboratory - Pressurized Excursion Module
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 4995
+Current EVA has been skipped
+Male 1 is currently suffocating on tick: 4996 in module: Laboratory - Pressurized Excursion Module
+Male 2 has died from lack of oxygen (hypoxia) on tick: 4996 with a risk value of: 0.43136
+Male 2 has been killed
+Elapsed time is 267.830779 seconds.
+Simulation Run Ended: 23-Feb-2015 14:25:37
