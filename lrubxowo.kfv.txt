@@ -1,0 +1,36 @@
+﻿Merge remote-tracking branch 'origin/master'
+
+Conflicts:
+	HDUnominalWithFailureInvoke.asv
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 4 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   .gitignore
+#	new file:   BaselineHDUwithLettuceAllisruConvergedV2.mat
+#	new file:   HDUnominalWithFailureInvoke.asv
+#	modified:   HDUnominalWithFailureInvoke.m
+#	new file:   HDUwithPCMCCAAFailed.mat
+#	new file:   HDUwithPCMPCAFailed.mat
+#	new file:   HabNet Log 22-Feb-2015 18-30-41.txt
+#	new file:   HabNet Log 22-Feb-2015 18-59-28.txt
+#	new file:   HabNet Log 22-Feb-2015 19-49-14.txt
+#	new file:   HabNet Log 22-Feb-2015 19-50-03.txt
+#	new file:   HabNet Log 22-Feb-2015 19-52-40.txt
+#	new file:   HabNet Log 22-Feb-2015 21-03-47.txt
+#	new file:   HabNet Log 23-Feb-2015 01-23-36.txt
+#
+
