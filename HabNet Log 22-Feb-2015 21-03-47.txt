@@ -1,0 +1,53 @@
+Simulation Run Started: 22-Feb-2015 21:03:47
+Baseline Simulation Run - With Lettuce & All ISRU
+Elapsed time is 563.456786 seconds.
+if system_dependent('IsDebugMode')==1, dbquit; end
+figure, plot(potablewaterstorelevel)
+figure, plot(o2storelevel)
+figure, plot(n2storelevel)
+close all
+figure, plot(potablewaterstorelevel)
+figure, plot(potablewaterstorelevel,'LineWidth',2), grid on, title('Potable Water Store Level')
+figure, plot(o2storelevel,'LineWidth',2), grid on, title('O2 Store Level')
+figure, plot(n2storelevel,'LineWidth',2), grid on, title('N2 Store Level')
+close all
+figure, plot(gerywaterstorelevel)
+{Undefined function or variable 'gerywaterstorelevel'.
+} 
+figure, plot(greywaterstorelevel)
+GreyWaterStore
+
+GreyWaterStore = 
+
+  <a href="matlab:helpPopup StoreImpl" style="font-weight:bold">StoreImpl</a> with properties:
+
+             contents: 'Grey H2O'
+                 type: 'Material'
+            tickcount: 0
+         currentLevel: 12.3880
+      currentCapacity: 45.4545
+             overflow: 0
+                 pipe: 0
+    resupplyFrequency: 0
+       resupplyAmount: 0
+
+DirtyWaterStore
+
+DirtyWaterStore = 
+
+  <a href="matlab:helpPopup StoreImpl" style="font-weight:bold">StoreImpl</a> with properties:
+
+             contents: 'Dirty H2O'
+                 type: 'Material'
+            tickcount: 0
+         currentLevel: 2.5850
+      currentCapacity: 9
+             overflow: 0
+                 pipe: 0
+    resupplyFrequency: 0
+       resupplyAmount: 0
+
+figure, plot(dirtywaterstorelevel)
+figure, plot(greywaterstorelevel)
+HDUnominalWithFailureInvoke
+Elapsed time is 5.138127 seconds.

@@ -1,0 +1,72 @@
+Simulation Run Started: 23-Feb-2015 01:23:36
+Baseline Simulation Run - With Lettuce & All ISRU
+Elapsed time is 1163.159165 seconds.
+if system_dependent('IsDebugMode')==1, dbquit; end
+i
+
+i =
+
+       19000
+
+figure, 
+subplot(2,3,1), plot(t,LabO2level(t)./LabTotalMoles(t).*LabPressure(t),t,LabCO2level(t)./LabTotalMoles(t).*LabPressure(t),t,LabN2level(t)./LabTotalMoles(t).*LabPressure(t),t,LabVaporlevel(t)./LabTotalMoles(t).*LabPressure(t),t,LabOtherlevel(t)./LabTotalMoles(t).*LabPressure(t),'LineWidth',2), title('Lab'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
+subplot(2,3,2), plot(t,PCMO2level(t)./PCMTotalMoles(t).*PCMPressure(t),t,PCMCO2level(t)./PCMTotalMoles(t).*PCMPressure(t),t,PCMN2level(t)./PCMTotalMoles(t).*PCMPressure(t),t,PCMVaporlevel(t)./PCMTotalMoles(t).*PCMPressure(t),t,PCMOtherlevel(t)./PCMTotalMoles(t).*PCMPressure(t),'LineWidth',2), title('PCM'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
+subplot(2,3,3), plot(t,PLMO2level(t)./PLMTotalMoles(t).*PLMPressure(t),t,PLMCO2level(t)./PLMTotalMoles(t).*PLMPressure(t),t,PLMN2level(t)./PLMTotalMoles(t).*PLMPressure(t),t,PLMVaporlevel(t)./PLMTotalMoles(t).*PLMPressure(t),t,PLMOtherlevel(t)./PLMTotalMoles(t).*PLMPressure(t),'LineWidth',2), title('PLM'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
+subplot(2,3,4), plot(t,LoftO2level(t)./LoftTotalMoles(t).*LoftPressure(t),t,LoftCO2level(t)./LoftTotalMoles(t).*LoftPressure(t),t,LoftN2level(t)./LoftTotalMoles(t).*LoftPressure(t),t,LoftVaporlevel(t)./LoftTotalMoles(t).*LoftPressure(t),t,LoftOtherlevel(t)./LoftTotalMoles(t).*LoftPressure(t),'LineWidth',2), title('Loft'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
+subplot(2,3,5), plot(t,SuitlockO2level(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),t,SuitlockCO2level(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),t,SuitlockN2level(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),t,SuitlockVaporlevel(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),t,SuitlockOtherlevel(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),'LineWidth',2), title('Suitlock'),legend('O2','CO2','N2','Vapor','Other'), grid on, xlabel('Time (hours)'), ylabel('Partial Pressure')
+PLMPPRV
+
+PLMPPRV = 
+
+  <a href="matlab:helpPopup ISSinjectorImpl" style="font-weight:bold">ISSinjectorImpl</a> with properties:
+
+                 OperatingMode: 'PPRV'
+           TargetTotalPressure: 55
+       TargetO2PartialPressure: 17.6000
+         TargetO2MolarFraction: 0.3200
+                      O2Vented: 2.9666e+03
+                     CO2Vented: 14.6443
+                      N2Vented: 6.0606e+03
+                   VaporVented: 197.5718
+              OtherGasesVented: 0.8005
+                      O2Source: [1x1 ResourceUseDefinitionImpl]
+                      N2Source: [1x1 ResourceUseDefinitionImpl]
+                   Environment: [1x1 SimEnvironmentImpl]
+                         Error: 0
+      UpperPPO2PercentageLimit: 0.6000
+    PartialPressureBoundingBox: 1.3790
+              VentPortDiameter: 0.0560
+           MarsMeanAtmPressure: 0.6360
+            MarsMeanAtmDensity: 0.0200
+              idealGasConstant: 8.3140
+                   O2molarMass: 31.9980
+                  CO2molarMass: 44.0090
+                   N2molarMass: 28.0140
+                VapormolarMass: 18.0150
+                OthermolarMass: 29.0698
+
+PLM.O2Store
+
+ans = 
+
+  <a href="matlab:helpPopup StoreImpl" style="font-weight:bold">StoreImpl</a> with properties:
+
+             contents: 'O2'
+                 type: 'Environmental'
+            tickcount: 19000
+         currentLevel: 401.0192
+      currentCapacity: 401.0192
+             overflow: 0
+                 pipe: 0
+    resupplyFrequency: 0
+       resupplyAmount: 0
+
+PCMPCA
+
+PCMPCA = 
+
+  <a href="matlab:helpPopup ISSinjectorImpl" style="font-weight:bold">ISSinjectorImpl</a> with properties:
+
+                 OperatingMode: 'PCA'
+           TargetTotalPressure: 55
+       TargetO2PartialPres

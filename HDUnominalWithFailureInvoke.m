@@ -79,7 +79,7 @@ o2fireRiskMolarFraction = 0.6;      % overwrite default value of 0.3 since targe
 % TotalPPO2Targeted = TargetO2MolarFraction*TotalAtmPressureTargeted;               % targeted O2 partial pressure, in kPa (converted from 26.5% O2)
 
 %% Invoke One-At-A-Time Failure at Given Tick
-FailureTick = 1;
+FailureTick = 20000;
 
 ErrorList = {'LabPCA','LoftPCA','PCMPCA','SuitlockPCA','PLMPPRV',...
     'LabCCAA','LoftCCAA','PCMCCAA','SuitlockCCAA','mainvccr','ogs',...
@@ -87,7 +87,7 @@ ErrorList = {'LabPCA','LoftPCA','PCMPCA','SuitlockPCA','PLMPPRV',...
     'waterRS.WPAerror','waterRS.UPAerror','Lab2PCMFan','PLM2PCMFan',...
     'Loft2PCMFan','Lab2AirlockFan'};
 
-SystemToFail = 1:5;%[1,12,5,14];
+SystemToFail = 8;%1:5;%[1,12,5,14];
 
 % Determine failure command based on type of technology
 
@@ -104,7 +104,8 @@ for j = 1:length(SystemToFail)
 end
 
 %% ISRU Production Rates
-isruAddedWater = 0.106;      % Liters/hour
+% isruAddedWater = 0.106;      % Liters/hour
+isruAddedWater = 0.184;      % Liters/hour
 % isruAddedCropWater = 1.11;  % Liter/hour
 isruAddedO2 = 1.1;            % moles/hour
 isruAddedN2 = 2.04;          % moles/hour
@@ -626,7 +627,7 @@ diary(['HabNet Log ',timestamp,'.txt'])
 disp(['Simulation Run Started: ',datestr(clock)]);
 disp('Baseline Simulation Run - With Lettuce & All ISRU')
 
-for i = 1:1000%simtime
+for i = 1:simtime
         
     if astro1.alive == 0 || astro2.alive == 0 || astro3.alive == 0 || astro4.alive == 0 ||...
             LettuceShelf.hasDied >= 1
