@@ -69,4 +69,49 @@ PCMPCA =
 
                  OperatingMode: 'PCA'
            TargetTotalPressure: 55
-       TargetO2PartialPres
+       TargetO2PartialPressure: 17.6000
+         TargetO2MolarFraction: 0.3200
+                      O2Vented: 613.6933
+                     CO2Vented: 4.1109
+                      N2Vented: 1.2483e+03
+                   VaporVented: 46.7391
+              OtherGasesVented: 0.2077
+                      O2Source: [1x1 ResourceUseDefinitionImpl]
+                      N2Source: [1x1 ResourceUseDefinitionImpl]
+                   Environment: [1x1 SimEnvironmentImpl]
+                         Error: 0
+      UpperPPO2PercentageLimit: 0.6000
+    PartialPressureBoundingBox: 1.3790
+              VentPortDiameter: 0.0560
+           MarsMeanAtmPressure: 0.6360
+            MarsMeanAtmDensity: 0.0200
+              idealGasConstant: 8.3140
+                   O2molarMass: 31.9980
+                  CO2molarMass: 44.0090
+                   N2molarMass: 28.0140
+                VapormolarMass: 18.0150
+                OthermolarMass: 29.0698
+
+N2Store.currentCapacity
+
+ans =
+
+   6.4968e+03
+
+figure, plot(greywaterstorelevel)
+GreyWaterStore
+
+GreyWaterStore = 
+
+  <a href="matlab:helpPopup StoreImpl" style="font-weight:bold">StoreImpl</a> with properties:
+
+             contents: 'Grey H2O'
+                 type: 'Material'
+            tickcount: 0
+         currentLevel: 18.4353
+      currentCapacity: 45.4545
+             overflow: 0
+                 pipe: 0
+    resupplyFrequency: 0
+       resupplyAmount: 0
+
