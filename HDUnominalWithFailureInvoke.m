@@ -79,7 +79,7 @@ o2fireRiskMolarFraction = 0.6;      % overwrite default value of 0.3 since targe
 % TotalPPO2Targeted = TargetO2MolarFraction*TotalAtmPressureTargeted;               % targeted O2 partial pressure, in kPa (converted from 26.5% O2)
 
 %% Invoke One-At-A-Time Failure at Given Tick
-FailureTick = 20000;
+FailureTick = 1;
 
 ErrorList = {'LabPCA','LoftPCA','PCMPCA','SuitlockPCA','PLMPPRV',...
     'LabCCAA','LoftCCAA','PCMCCAA','SuitlockCCAA','mainvccr','ogs',...
@@ -1016,6 +1016,8 @@ toc
 beep
 
 close(h)
+
+diary off
 
 % save('HDUBaseline')
 
