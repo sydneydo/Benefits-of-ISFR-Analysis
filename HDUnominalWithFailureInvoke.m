@@ -87,7 +87,7 @@ ErrorList = {'LabPCA','LoftPCA','PCMPCA','SuitlockPCA','PLMPPRV',...
     'waterRS.WPAerror','waterRS.UPAerror','Lab2PCMFan','PLM2PCMFan',...
     'Loft2PCMFan','Lab2AirlockFan'};
 
-SystemToFail = 8;%1:5;%[1,12,5,14];
+SystemToFail = 10;%1:5;%[1,12,5,14];
 
 % Determine failure command based on type of technology
 
