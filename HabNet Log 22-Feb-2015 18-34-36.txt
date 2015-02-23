@@ -1,0 +1,14 @@
+Simulation Run Started: 22-Feb-2015 18:34:36
+Baseline Simulation Run - With Lettuce & All ISRU
+Failure invoked in LabPCA at tick 1
+Failure invoked in LoftPCA at tick 1
+Failure invoked in PCMPCA at tick 1
+Failure invoked in SuitlockPCA at tick 1
+Failure invoked in PLMPPRV at tick 1
+Male 1 is currently suffocating on tick: 877 in module: Pressurized Core Module
+Male 1 is currently suffocating on tick: 879 in module: Pressurized Core Module
+Female 1 is currently suffocating on tick: 879 in module: Pressurized Core Module
+Male 1 has died from lack of oxygen (hypoxia) on tick: 880 with a risk value of: 0.46552
+Male 1 has been killed
+Elapsed time is 109.617535 seconds.
+Simulation Run Ended: 22-Feb-2015 18:36:26
