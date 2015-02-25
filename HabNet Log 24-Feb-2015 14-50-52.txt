@@ -1,0 +1,84 @@
+Simulation Run Started: 24-Feb-2015 14:50:52
+Baseline Simulation Run - With Lettuce & All ISRU
+Failure invoked in waterRS.UPAerror at tick 1
+Insufficient resources available to fill PLSS Feedwater Reservoir. Filling store with as many resources as is available
+Male 1 is currently dehydrated on tick: 2412
+Female 1 is currently dehydrated on tick: 2412
+Male 2 is currently dehydrated on tick: 2412
+Female 2 is currently dehydrated on tick: 2412
+Female 1 is currently dehydrated on tick: 2413
+Male 2 is currently dehydrated on tick: 2413
+Female 2 is currently dehydrated on tick: 2413
+Female 1 is currently dehydrated on tick: 2414
+Male 2 is currently dehydrated on tick: 2414
+Female 2 is currently dehydrated on tick: 2414
+Female 1 is currently dehydrated on tick: 2415
+Male 2 is currently dehydrated on tick: 2415
+Female 2 is currently dehydrated on tick: 2415
+Male 1 is currently dehydrated on tick: 2416
+Female 1 is currently dehydrated on tick: 2416
+Male 2 is currently dehydrated on tick: 2416
+Female 2 is currently dehydrated on tick: 2416
+Male 1 is currently dehydrated on tick: 2417
+Female 1 is currently dehydrated on tick: 2417
+Male 2 is currently dehydrated on tick: 2417
+Female 2 is currently dehydrated on tick: 2417
+Female 1 is currently dehydrated on tick: 2418
+Male 2 is currently dehydrated on tick: 2418
+Female 2 is currently dehydrated on tick: 2418
+Female 1 is currently dehydrated on tick: 2419
+Male 2 is currently dehydrated on tick: 2419
+Female 2 is currently dehydrated on tick: 2419
+Female 1 is currently dehydrated on tick: 2420
+Male 2 is currently dehydrated on tick: 2420
+Female 2 is currently dehydrated on tick: 2420
+Male 1 is currently dehydrated on tick: 2421
+Female 1 is currently dehydrated on tick: 2421
+Male 2 is currently dehydrated on tick: 2421
+Female 2 is currently dehydrated on tick: 2421
+Female 1 is currently dehydrated on tick: 2422
+Male 2 is currently dehydrated on tick: 2422
+Female 2 is currently dehydrated on tick: 2422
+Female 1 is currently dehydrated on tick: 2423
+Male 2 is currently dehydrated on tick: 2423
+Female 2 is currently dehydrated on tick: 2423
+Male 1 is currently dehydrated on tick: 2424
+Female 1 is currently dehydrated on tick: 2424
+Male 2 is currently dehydrated on tick: 2424
+Female 2 is currently dehydrated on tick: 2424
+Female 1 is currently dehydrated on tick: 2425
+Male 2 is currently dehydrated on tick: 2425
+Female 2 is currently dehydrated on tick: 2425
+Male 1 is currently dehydrated on tick: 2426
+Female 1 is currently dehydrated on tick: 2426
+Male 2 is currently dehydrated on tick: 2426
+Female 2 is currently dehydrated on tick: 2426
+Male 1 is currently dehydrated on tick: 2427
+Female 1 is currently dehydrated on tick: 2427
+Male 2 is currently dehydrated on tick: 2427
+Female 2 is currently dehydrated on tick: 2427
+Male 1 is currently dehydrated on tick: 2428
+Female 1 is currently dehydrated on tick: 2428
+Male 2 is currently dehydrated on tick: 2428
+Female 2 is currently dehydrated on tick: 2428
+Male 1 is currently dehydrated on tick: 2429
+Female 1 is currently dehydrated on tick: 2429
+Male 2 is currently dehydrated on tick: 2429
+Female 2 is currently dehydrated on tick: 2429
+Female 1 is currently dehydrated on tick: 2430
+Male 2 is currently dehydrated on tick: 2430
+Female 2 is currently dehydrated on tick: 2430
+Male 1 is currently dehydrated on tick: 2431
+Female 1 is currently dehydrated on tick: 2431
+Male 2 is currently dehydrated on tick: 2431
+Female 2 is currently dehydrated on tick: 2431
+Female 1 is currently dehydrated on tick: 2432
+Male 2 is currently dehydrated on tick: 2432
+Female 2 is currently dehydrated on tick: 2432
+Female 1 is currently dehydrated on tick: 2433
+Male 2 is currently dehydrated on tick: 2433
+Male 2 has died from dehydration on tick: 2433 with a risk value of: 0.010413
+Male 2 has been killed
+Female 2 is currently dehydrated on tick: 2433
+Elapsed time is 100.241531 seconds.
+Simulation Run Ended: 24-Feb-2015 14:52:33

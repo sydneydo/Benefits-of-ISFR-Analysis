@@ -1,0 +1,5 @@
+Simulation Run Started: 23-Feb-2015 23:51:19
+Baseline Simulation Run - With Lettuce & All ISRU
+Failure invoked in PCMCCAA at tick 1
+Insufficient N2 available to perform pressure control action at tick 7051. Airlock is in a high O2% condition
+Elapsed time is 577.040146 seconds.

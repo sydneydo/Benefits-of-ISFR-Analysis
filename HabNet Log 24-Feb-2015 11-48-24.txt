@@ -1,0 +1,36 @@
+Simulation Run Started: 24-Feb-2015 11:48:25
+Baseline Simulation Run - With Lettuce & All ISRU
+Failure invoked in ogs at tick 1
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 5171
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 5187
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 5251
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 5254
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 5270
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 5272
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 5288
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 5291
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 5303
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 5306
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 5318
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 5321
+Current EVA has been skipped
+Male 2 is currently suffocating on tick: 5342 in module: Pressurized Core Module
+Female 2 is currently suffocating on tick: 5342 in module: Pressurized Core Module
+Female 1 is currently suffocating on tick: 5350 in module: Pressurized Core Module
+Male 1 is currently suffocating on tick: 5360 in module: Pressurized Core Module
+Male 1 is currently suffocating on tick: 5363 in module: Pressurized Core Module
+Male 1 has died from lack of oxygen (hypoxia) on tick: 5363 with a risk value of: 0.43136
+Male 1 has been killed
+Elapsed time is 224.817430 seconds.
+Simulation Run Ended: 24-Feb-2015 11:52:09
