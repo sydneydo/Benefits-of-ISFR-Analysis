@@ -133,7 +133,7 @@ classdef ISSWaterRSLinearImpl < handle
                     
                     % Process Dirty Water and send condensate to GreyWaterStore
                     UrineToProcess = obj.UPAwasteWaterTank.take(currentUPAprocessingRate);      % Take urine from UPAwasteWaterTank based on currentUPAprocessingRate
-                    obj.GreyWaterConsumerDefinition.ResourceStore.add(obj.UrineProcessingEfficiency*UrineToProcess);
+                    obj.GreyWaterProducerDefinition.ResourceStore.add(obj.UrineProcessingEfficiency*UrineToProcess);
                     obj.DryWasteProducerDefinition.ResourceStore.add((1-obj.UrineProcessingEfficiency)*UrineToProcess);     % Send brine to dry waste store (we lose this amount of water) - this equivalent to sending brine to the UPA ARFTA (note that dry waste is measured in kg)
                     
                 else

@@ -1,0 +1,4 @@
+Simulation Run Started: 24-Feb-2015 01:58:32
+Baseline Simulation Run - With Lettuce & All ISRU
+Failure invoked in crs.CompressorError at tick 1
+Elapsed time is 1536.465611 seconds.

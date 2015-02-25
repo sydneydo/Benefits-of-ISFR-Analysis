@@ -87,7 +87,7 @@ ErrorList = {'LabPCA','LoftPCA','PCMPCA','SuitlockPCA','PLMPPRV',...
     'waterRS.WPAerror','waterRS.UPAerror','Lab2PCMFan','PLM2PCMFan',...
     'Loft2PCMFan','Lab2AirlockFan'};
 
-SystemToFail = 7:8;%1:5;%[1,12,5,14];
+SystemToFail = 12;%1:5;%[1,12,5,14];
 
 % Determine failure command based on type of technology
 
@@ -1091,17 +1091,28 @@ subplot(2,2,4), plot(t,PLMN2level(t)./PLMTotalMoles(t).*PLMPressure(t),'LineWidt
 
 % Vapor Partial Pressure
 figure, 
-subplot(2,2,1), plot(t,LabVaporlevel(t)./LabTotalMoles(t).*LabPressure(t),'LineWidth',2), title('Inflatable 1'), grid on, xlabel('Time (hours)'), ylabel('Vapor Partial Pressure')
-subplot(2,2,2), plot(t,PCMVaporlevel(t)./PCMTotalMoles(t).*PCMPressure(t),'LineWidth',2), title('Living Unit 1'), grid on, xlabel('Time (hours)'), ylabel('Vapor Partial Pressure')
-subplot(2,2,3), plot(t,lifeSupportUnitVaporlevel(t)./lifeSupportUnitTotalMoles(t).*lifeSupportUnitPressure(t),'LineWidth',2), title('Life Support Unit 1'), grid on, xlabel('Time (hours)'), ylabel('Vapor Partial Pressure')
-subplot(2,2,4), plot(t,PLMVaporlevel(t)./PLMTotalMoles(t).*PLMPressure(t),'LineWidth',2), title('Cargo Unit 1'), grid on, xlabel('Time (hours)'), ylabel('Vapor Partial Pressure')
+subplot(2,3,1), plot(t,LabVaporlevel(t)./LabTotalMoles(t).*LabPressure(t),'LineWidth',2), title('Lab'), grid on, xlabel('Time (hours)'), ylabel('Vapor Partial Pressure')
+subplot(2,3,2), plot(t,PCMVaporlevel(t)./PCMTotalMoles(t).*PCMPressure(t),'LineWidth',2), title('PCM'), grid on, xlabel('Time (hours)'), ylabel('Vapor Partial Pressure')
+subplot(2,3,3), plot(t,PLMVaporlevel(t)./PLMTotalMoles(t).*PLMPressure(t),'LineWidth',2), title('PLM'), grid on, xlabel('Time (hours)'), ylabel('Vapor Partial Pressure')
+subplot(2,3,4), plot(t,LoftVaporlevel(t)./LoftTotalMoles(t).*LoftPressure(t),'LineWidth',2), title('Loft'), grid on, xlabel('Time (hours)'), ylabel('Vapor Partial Pressure')
+subplot(2,3,5), plot(t,SuitlockVaporlevel(t)./SuitlockTotalMoles(t).*SuitlockPressure(t),'LineWidth',2), title('Suitlock'), grid on, xlabel('Time (hours)'), ylabel('Vapor Partial Pressure')
+
+% Vapor Molar Fraction
+figure, 
+subplot(2,3,1), plot(t,LabVaporlevel(t)./LabTotalMoles(t),'LineWidth',2), title('Lab'), grid on, xlabel('Time (hours)'), ylabel('Vapor Molar Fraction')
+subplot(2,3,2), plot(t,PCMVaporlevel(t)./PCMTotalMoles(t),'LineWidth',2), title('PCM'), grid on, xlabel('Time (hours)'), ylabel('Vapor Molar Fraction')
+subplot(2,3,3), plot(t,PLMVaporlevel(t)./PLMTotalMoles(t),'LineWidth',2), title('PLM'), grid on, xlabel('Time (hours)'), ylabel('Vapor Molar Fraction')
+subplot(2,3,4), plot(t,LoftVaporlevel(t)./LoftTotalMoles(t),'LineWidth',2), title('Loft'), grid on, xlabel('Time (hours)'), ylabel('Vapor Molar Fraction')
+subplot(2,3,5), plot(t,SuitlockVaporlevel(t)./SuitlockTotalMoles(t),'LineWidth',2), title('Suitlock'), grid on, xlabel('Time (hours)'), ylabel('Vapor Molar Fraction')
 
 % Total Pressure
 figure, 
-subplot(2,2,1), plot(t,LabPressure(t),'LineWidth',2), title('Inflatable 1'), grid on, xlabel('Time (hours)'), ylabel('Total Pressure')
-subplot(2,2,2), plot(t,PCMPressure(t),'LineWidth',2), title('Living Unit 1'), grid on, xlabel('Time (hours)'), ylabel('Total Pressure')
-subplot(2,2,3), plot(t,lifeSupportUnitPressure(t),'LineWidth',2), title('Life Support Unit 1'), grid on, xlabel('Time (hours)'), ylabel('Total Pressure')
-subplot(2,2,4), plot(t,PLMPressure(t),'LineWidth',2), title('PLM'), grid on, xlabel('Time (hours)'), ylabel('Total Pressure')
+subplot(2,3,1), plot(t,LabPressure(t),'LineWidth',2), title('Lab'), grid on, xlabel('Time (hours)'), ylabel('Total Pressure')
+subplot(2,3,2), plot(t,PCMPressure(t),'LineWidth',2), title('PCM'), grid on, xlabel('Time (hours)'), ylabel('Total Pressure')
+subplot(2,3,3), plot(t,PLMPressure(t),'LineWidth',2), title('PLM'), grid on, xlabel('Time (hours)'), ylabel('Total Pressure')
+subplot(2,3,4), plot(t,LoftPressure(t),'LineWidth',2), title('Loft'), grid on, xlabel('Time (hours)'), ylabel('Total Pressure')
+subplot(2,3,5), plot(t,SuitlockPressure(t),'LineWidth',2), title('Suitlock'), grid on, xlabel('Time (hours)'), ylabel('Total Pressure')
+
 
 % % Environmental N2 Store plots
 % figure, 
