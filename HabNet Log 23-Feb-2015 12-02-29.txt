@@ -1,0 +1,83 @@
+Simulation Run Started: 23-Feb-2015 12:02:29
+Baseline Simulation Run - With Lettuce & All ISRU
+Failure invoked in mainvccr at tick 1
+Female 1 is currently experiencing CO2 poisoning on tick: 38 in module: Pressurized Core Module
+Male 2 is currently experiencing CO2 poisoning on tick: 39 in module: Laboratory - Pressurized Excursion Module
+Female 1 is currently experiencing CO2 poisoning on tick: 40 in module: Pressurized Logistics Module
+Male 2 is currently experiencing CO2 poisoning on tick: 40 in module: Pressurized Core Module
+Female 2 is currently experiencing CO2 poisoning on tick: 40 in module: Pressurized Core Module
+Female 1 is currently experiencing CO2 poisoning on tick: 41 in module: Laboratory - Pressurized Excursion Module
+Male 2 is currently experiencing CO2 poisoning on tick: 41 in module: Pressurized Core Module
+Female 2 is currently experiencing CO2 poisoning on tick: 41 in module: Loft
+Male 1 is currently experiencing CO2 poisoning on tick: 42 in module: Pressurized Core Module
+Female 1 is currently experiencing CO2 poisoning on tick: 42 in module: Loft
+Male 2 is currently experiencing CO2 poisoning on tick: 42 in module: Laboratory - Pressurized Excursion Module
+Female 2 is currently experiencing CO2 poisoning on tick: 42 in module: Laboratory - Pressurized Excursion Module
+Male 1 is currently experiencing CO2 poisoning on tick: 43 in module: Pressurized Core Module
+Female 1 is currently experiencing CO2 poisoning on tick: 43 in module: Pressurized Core Module
+Male 2 is currently experiencing CO2 poisoning on tick: 43 in module: Loft
+Female 2 is currently experiencing CO2 poisoning on tick: 43 in module: Laboratory - Pressurized Excursion Module
+Male 1 is currently experiencing CO2 poisoning on tick: 44 in module: Loft
+Female 1 is currently experiencing CO2 poisoning on tick: 44 in module: Loft
+Male 2 is currently experiencing CO2 poisoning on tick: 44 in module: Pressurized Core Module
+Female 2 is currently experiencing CO2 poisoning on tick: 44 in module: Pressurized Core Module
+Male 1 is currently experiencing CO2 poisoning on tick: 45 in module: Loft
+Female 1 is currently experiencing CO2 poisoning on tick: 45 in module: Loft
+Male 2 is currently experiencing CO2 poisoning on tick: 45 in module: Pressurized Logistics Module
+Female 2 is currently experiencing CO2 poisoning on tick: 45 in module: Pressurized Core Module
+Male 1 is currently experiencing CO2 poisoning on tick: 46 in module: Laboratory - Pressurized Excursion Module
+Female 1 is currently experiencing CO2 poisoning on tick: 46 in module: Loft
+Male 2 is currently experiencing CO2 poisoning on tick: 46 in module: Laboratory - Pressurized Excursion Module
+Female 2 is currently experiencing CO2 poisoning on tick: 46 in module: Laboratory - Pressurized Excursion Module
+Male 1 is currently experiencing CO2 poisoning on tick: 47 in module: Loft
+Female 1 is currently experiencing CO2 poisoning on tick: 47 in module: Laboratory - Pressurized Excursion Module
+Male 2 is currently experiencing CO2 poisoning on tick: 47 in module: Loft
+Female 2 is currently experiencing CO2 poisoning on tick: 47 in module: Pressurized Logistics Module
+Male 1 is currently experiencing CO2 poisoning on tick: 48 in module: Loft
+Female 1 is currently experiencing CO2 poisoning on tick: 48 in module: Loft
+Male 2 is currently experiencing CO2 poisoning on tick: 48 in module: Loft
+Female 2 is currently experiencing CO2 poisoning on tick: 48 in module: Loft
+Male 1 is currently experiencing CO2 poisoning on tick: 49 in module: Loft
+Female 1 is currently experiencing CO2 poisoning on tick: 49 in module: Loft
+Male 2 is currently experiencing CO2 poisoning on tick: 49 in module: Loft
+Female 2 is currently experiencing CO2 poisoning on tick: 49 in module: Loft
+Male 1 is currently experiencing CO2 poisoning on tick: 50 in module: Loft
+Female 1 is currently experiencing CO2 poisoning on tick: 50 in module: Loft
+Male 2 is currently experiencing CO2 poisoning on tick: 50 in module: Loft
+Female 2 is currently experiencing CO2 poisoning on tick: 50 in module: Loft
+Male 1 is currently experiencing CO2 poisoning on tick: 51 in module: Loft
+Female 1 is currently experiencing CO2 poisoning on tick: 51 in module: Loft
+Male 2 is currently experiencing CO2 poisoning on tick: 51 in module: Loft
+Female 2 is currently experiencing CO2 poisoning on tick: 51 in module: Loft
+Male 1 is currently experiencing CO2 poisoning on tick: 52 in module: Loft
+Female 1 is currently experiencing CO2 poisoning on tick: 52 in module: Loft
+Male 2 is currently experiencing CO2 poisoning on tick: 52 in module: Loft
+Female 2 is currently experiencing CO2 poisoning on tick: 52 in module: Loft
+Male 1 is currently experiencing CO2 poisoning on tick: 53 in module: Loft
+Female 1 is currently experiencing CO2 poisoning on tick: 53 in module: Loft
+Male 2 is currently experiencing CO2 poisoning on tick: 53 in module: Loft
+Female 2 is currently experiencing CO2 poisoning on tick: 53 in module: Loft
+Male 1 is currently experiencing CO2 poisoning on tick: 54 in module: Loft
+Female 1 is currently experiencing CO2 poisoning on tick: 54 in module: Loft
+Male 2 is currently experiencing CO2 poisoning on tick: 54 in module: Loft
+Female 2 is currently experiencing CO2 poisoning on tick: 54 in module: Loft
+Male 1 is currently experiencing CO2 poisoning on tick: 55 in module: Loft
+Female 1 is currently experiencing CO2 poisoning on tick: 55 in module: Loft
+Male 2 is currently experiencing CO2 poisoning on tick: 55 in module: Loft
+Female 2 is currently experiencing CO2 poisoning on tick: 55 in module: Loft
+Male 1 is currently experiencing CO2 poisoning on tick: 56 in module: Loft
+Female 1 is currently experiencing CO2 poisoning on tick: 56 in module: Laboratory - Pressurized Excursion Module
+Male 2 is currently experiencing CO2 poisoning on tick: 56 in module: Loft
+Female 2 is currently experiencing CO2 poisoning on tick: 56 in module: Pressurized Logistics Module
+Male 1 is currently experiencing CO2 poisoning on tick: 57 in module: Laboratory - Pressurized Excursion Module
+Female 1 is currently experiencing CO2 poisoning on tick: 57 in module: Laboratory - Pressurized Excursion Module
+Male 2 is currently experiencing CO2 poisoning on tick: 57 in module: Loft
+Female 2 is currently experiencing CO2 poisoning on tick: 57 in module: Loft
+Male 1 is currently experiencing CO2 poisoning on tick: 58 in module: Laboratory - Pressurized Excursion Module
+Female 1 is currently experiencing CO2 poisoning on tick: 58 in module: Pressurized Logistics Module
+Male 2 is currently experiencing CO2 poisoning on tick: 58 in module: Pressurized Core Module
+Male 2 has died from CO2 poisoning on tick: 58 with a risk value of: 0.13721
+Male 2 has been killed
+Female 2 is currently experiencing CO2 poisoning on tick: 58 in module: Pressurized Logistics Module
+Elapsed time is 12.129484 seconds.
+Simulation Run Ended: 23-Feb-2015 12:02:41
