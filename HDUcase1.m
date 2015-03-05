@@ -110,15 +110,15 @@ end
 
 %% ISRU Production Rates
 % isruAddedWater = 0.106;      % Liters/hour
-isruAddedWater = 0.184;      % Liters/hour
+% isruAddedWater = 0.184;      % Liters/hour
 % isruAddedCropWater = 1.11;  % Liter/hour
-isruAddedO2 = 1.1;            % moles/hour
-isruAddedN2 = 2.04;          % moles/hour
+% isruAddedO2 = 1.1;            % moles/hour
+% isruAddedN2 = 2.04;          % moles/hour
 
-% isruAddedWater = 0;      % Liters/hour
+isruAddedWater = 0;      % Liters/hour
 isruAddedCropWater = 0;  % Liter/hour
-% isruAddedO2 = 0;            % moles/hour
-% isruAddedN2 = 0;          % moles/hour
+isruAddedO2 = 0;            % moles/hour
+isruAddedN2 = 0;          % moles/hour
 
 %% EMU
 EMUco2RemovalTechnology = 'RCA';  % options are RCA or METOX
@@ -127,7 +127,8 @@ EMUurineManagementTechnology = 'UCTA';  % options are MAG or UCTA
 %% Initialize Stores
 % Potable Water Store within Life Support Units (note water store capacity
 % measured in liters)
-PotableWaterStore = StoreImpl('Potable H2O','Material',1500,1500);      % Assume 1500L of water initially - note that ATV transports 840L of water while HTV carries 600L in 14 CWC-Is
+initialpotablewater = 10*1.5*4750; % 1500; %Liters
+PotableWaterStore = StoreImpl('Potable H2O','Material',initialpotablewater,initialpotablewater);      % Assume 1500L of water initially - note that ATV transports 840L of water while HTV carries 600L in 14 CWC-Is
 % PotableWaterStore = StoreImpl('Potable H2O','Material',56.7,56.7);      %
 % WPA Product Water tank has a capacity of 56.7L (ref: SAE 2008-01-2007).
 % Note that on ISS, the WPA Product Water Tank feeds the Potable Water
@@ -136,7 +137,8 @@ PotableWaterStore = StoreImpl('Potable H2O','Material',1500,1500);      % Assume
 % O2 Store within Life Support Units (note O2 capacity measured in moles)
 initialO2TankCapacityInKg = 3*91; %120; %100.2;  % Corresponds to three O2 tanks currently located on exterior of Quest airlock (REF: ISS ECLSS Status 2010-11)
 o2MolarMass = 2*15.999; % g/mol
-initialO2StoreMoles = initialO2TankCapacityInKg*1E3/o2MolarMass;
+% initialO2StoreMoles = initialO2TankCapacityInKg*1E3/o2MolarMass;
+initialO2StoreMoles = 5*5*22150;
 O2Store = StoreImpl('O2 Store','Material',initialO2StoreMoles,initialO2StoreMoles);
 
 % Store size TBD (note WaterRSLinear takes dirty water first, then grey
@@ -192,7 +194,8 @@ MethaneStore = StoreImpl('CH4 Store','Environmental');    % CH4 store for output
 numberOfN2Tanks = 2;% Corresponds to the number of N2 tanks on ISS
 initialN2TankCapacityInKg = numberOfN2Tanks*91;
 n2MolarMass = 2*14.007; %g/mol;
-initialN2StoreMoles = initialN2TankCapacityInKg*1E3/n2MolarMass;
+% initialN2StoreMoles = initialN2TankCapacityInKg*1E3/n2MolarMass;
+initialN2StoreMoles = 45200;
 N2Store = StoreImpl('N2 Store','Material',initialN2StoreMoles,initialN2StoreMoles);     
 
 % Power Stores
@@ -487,7 +490,7 @@ cropsTargetCO2 = 1200;      % Ideal CO2 PPM level for lettuce crops
 mainvccr = ISSVCCRLinearImpl(PCM,PCM,CO2Store,MainPowerStore,cropsTargetCO2);       % When there is a 5th element within the constructor for ISSVCCRLinearImpl, the CDRA is set to a reduced mode, where it only operates to reach a target CO2 level
 
 % Initialize OGS
-ogs = ISSOGA(TotalAtmPressureTargeted,TargetO2MolarFraction,PCM,PotableWaterStore,MainPowerStore,H2Store);
+% ogs = ISSOGA(TotalAtmPressureTargeted,TargetO2MolarFraction,PCM,PotableWaterStore,MainPowerStore,H2Store);
 
 % Initialize CRS (Sabatier Reactor)
 crs = ISSCRSImpl(H2Store,CO2Store,GreyWaterStore,MethaneStore,MainPowerStore);
@@ -507,7 +510,7 @@ crs = ISSCRSImpl(H2Store,CO2Store,GreyWaterStore,MethaneStore,MainPowerStore);
 %% Initialize Water Processing Technologies
 
 % Initialize WaterRS (Linear)
-waterRS = ISSWaterRSLinearImpl(DirtyWaterStore,GreyWaterStore,GreyWaterStore,DryWasteStore,PotableWaterStore,MainPowerStore);
+% waterRS = ISSWaterRSLinearImpl(DirtyWaterStore,GreyWaterStore,GreyWaterStore,DryWasteStore,PotableWaterStore,MainPowerStore);
 
 
 %% Initialize Power Production Systems
@@ -585,7 +588,7 @@ SuitlockVaporlevel = zeros(1,simtime);
 SuitlockOtherlevel = zeros(1,simtime);
 SuitlockTotalMoles = zeros(1,simtime);
 
-ogsoutput = zeros(1,simtime);
+% ogsoutput = zeros(1,simtime);
 LabPCAaction = zeros(4,simtime+1);
 LoftPCAaction = zeros(4,simtime+1);
 PCMPCAaction = zeros(4,simtime+1);
@@ -713,7 +716,7 @@ for i = 1:simtime
         SuitlockOtherlevel = SuitlockOtherlevel(1:(i-1));
         SuitlockTotalMoles = SuitlockTotalMoles(1:(i-1));
         
-        ogsoutput = ogsoutput(1:(i-1));
+%         ogsoutput = ogsoutput(1:(i-1));
 %         inflatableO2extracted = inflatableO2extracted(1:(i-1));
 %         condensedWaterRemoved = condensedWaterRemoved(1:(i-1));
         
@@ -858,7 +861,7 @@ for i = 1:simtime
     powerPS.tick; 
     
     % Run ECLSS Hardware       
-    ogsoutput(i) = ogs.tick;
+%     ogsoutput(i) = ogs.tick;
     
     % Tick ORA
 %     inflatableO2extracted(i) = inflatableORA.tick;
@@ -878,10 +881,10 @@ for i = 1:simtime
           
     % Run Waste Processing ECLSS Hardware
     co2removed(i) = mainvccr.tick;
-    crsH2OProduced(i) = crs.tick;
+%     crsH2OProduced(i) = crs.tick;
     crsCompressorOperation(:,i) = crs.CompressorOperation;
     co2accumulatorlevel(i) = crs.CO2Accumulator.currentLevel;
-    waterRS.tick;
+%     waterRS.tick;
     
     %% Food Production System
     cropwaterstorelevel(i) = CropWaterStore.currentLevel;
