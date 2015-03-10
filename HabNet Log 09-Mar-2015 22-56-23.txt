@@ -1,0 +1,19 @@
+Simulation Run Started: 09-Mar-2015 22:56:24
+Baseline Simulation Run - With Lettuce & All ISRU
+Failure invoked in ogs at tick 1
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 8123
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 8139
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 8142
+Current EVA has been skipped
+Female 1 is currently suffocating on tick: 8155 in module: Pressurized Core Module
+Female 1 is currently suffocating on tick: 8159 in module: Pressurized Core Module
+Male 1 is currently suffocating on tick: 8160 in module: Pressurized Core Module
+Female 1 is currently suffocating on tick: 8160 in module: Pressurized Core Module
+Female 1 has died from lack of oxygen (hypoxia) on tick: 8161 with a risk value of: 0.5
+Female 1 has been killed
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 8161
+Current EVA has been skipped
+Elapsed time is 260.145167 seconds.
+Simulation Run Ended: 09-Mar-2015 23:00:44

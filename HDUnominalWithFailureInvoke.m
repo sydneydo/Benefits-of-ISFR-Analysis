@@ -84,7 +84,7 @@ o2fireRiskMolarFraction = 0.6;      % overwrite default value of 0.3 since targe
 % TotalPPO2Targeted = TargetO2MolarFraction*TotalAtmPressureTargeted;               % targeted O2 partial pressure, in kPa (converted from 26.5% O2)
 
 %% Invoke One-At-A-Time Failure at Given Tick
-FailureTick = 1;
+FailureTick = 0;%1;
 
 ErrorList = {'LabPCA','LoftPCA','PCMPCA','SuitlockPCA','PLMPPRV',...
     'LabCCAA','LoftCCAA','PCMCCAA','SuitlockCCAA','mainvccr','ogs',...
@@ -92,7 +92,7 @@ ErrorList = {'LabPCA','LoftPCA','PCMPCA','SuitlockPCA','PLMPPRV',...
     'waterRS.WPAerror','waterRS.UPAerror','Lab2PCMFan','PLM2PCMFan',...
     'Loft2PCMFan','Lab2AirlockFan'};
 
-SystemToFail = 15;%1:5;%[1,12,5,14];
+SystemToFail = [];%1:5;%[1,12,5,14];
 
 % Determine failure command based on type of technology
 
@@ -110,15 +110,15 @@ end
 
 %% ISRU Production Rates
 % isruAddedWater = 0.106;      % Liters/hour
-isruAddedWater = 0.184;      % Liters/hour
+% isruAddedWater = 0.184;      % Liters/hour
 % isruAddedCropWater = 1.11;  % Liter/hour
-isruAddedO2 = 1.1;            % moles/hour
-isruAddedN2 = 2.04;          % moles/hour
+% isruAddedO2 = 1.1;            % moles/hour
+% isruAddedN2 = 2.04;          % moles/hour
 
-% isruAddedWater = 0;      % Liters/hour
+isruAddedWater = 0;      % Liters/hour
 isruAddedCropWater = 0;  % Liter/hour
-% isruAddedO2 = 0;            % moles/hour
-% isruAddedN2 = 0;          % moles/hour
+isruAddedO2 = 0;            % moles/hour
+isruAddedN2 = 0;          % moles/hour
 
 %% EMU
 EMUco2RemovalTechnology = 'RCA';  % options are RCA or METOX
@@ -127,14 +127,16 @@ EMUurineManagementTechnology = 'UCTA';  % options are MAG or UCTA
 %% Initialize Stores
 % Potable Water Store within Life Support Units (note water store capacity
 % measured in liters)
-PotableWaterStore = StoreImpl('Potable H2O','Material',1500,1500);      % Assume 1500L of water initially - note that ATV transports 840L of water while HTV carries 600L in 14 CWC-Is
+
+initialWaterLevel = 3344; %1500
+PotableWaterStore = StoreImpl('Potable H2O','Material',initialWaterLevel,initialWaterLevel);      % Assume 1500L of water initially - note that ATV transports 840L of water while HTV carries 600L in 14 CWC-Is
 % PotableWaterStore = StoreImpl('Potable H2O','Material',56.7,56.7);      %
 % WPA Product Water tank has a capacity of 56.7L (ref: SAE 2008-01-2007).
 % Note that on ISS, the WPA Product Water Tank feeds the Potable Water
 % Dispenser, the OGA, and the WHC flush and hygiene hose.
 
 % O2 Store within Life Support Units (note O2 capacity measured in moles)
-initialO2TankCapacityInKg = 3*91; %120; %100.2;  % Corresponds to three O2 tanks currently located on exterior of Quest airlock (REF: ISS ECLSS Status 2010-11)
+initialO2TankCapacityInKg = 700; %3*91; %120; %100.2;  % Corresponds to three O2 tanks currently located on exterior of Quest airlock (REF: ISS ECLSS Status 2010-11)
 o2MolarMass = 2*15.999; % g/mol
 initialO2StoreMoles = initialO2TankCapacityInKg*1E3/o2MolarMass;
 O2Store = StoreImpl('O2 Store','Material',initialO2StoreMoles,initialO2StoreMoles);
@@ -190,7 +192,7 @@ MethaneStore = StoreImpl('CH4 Store','Environmental');    % CH4 store for output
 % Corresponds to 2x high pressure N2 tanks currently mounted on exterior of Quest airlock on ISS (each holds 91kg of N2)
 % This is subject to change based on requirements
 numberOfN2Tanks = 2;% Corresponds to the number of N2 tanks on ISS
-initialN2TankCapacityInKg = numberOfN2Tanks*91;
+initialN2TankCapacityInKg = 1100; %numberOfN2Tanks*91;
 n2MolarMass = 2*14.007; %g/mol;
 initialN2StoreMoles = initialN2TankCapacityInKg*1E3/n2MolarMass;
 N2Store = StoreImpl('N2 Store','Material',initialN2StoreMoles,initialN2StoreMoles);     
