@@ -1,0 +1,15 @@
+Simulation Run Started: 09-Mar-2015 23:07:31
+Baseline Simulation Run - With Lettuce & All ISRU
+Failure invoked in PCMCCAA at tick 1
+Insufficient resources available to fill EMU O2 Bottles. Filling store with as many resources as is available
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 16451
+Current EVA has been skipped
+Female 1 is currently suffocating on tick: 16519 in module: Laboratory - Pressurized Excursion Module
+Female 2 is currently suffocating on tick: 16519 in module: Laboratory - Pressurized Excursion Module
+Male 1 is currently suffocating on tick: 16520 in module: Laboratory - Pressurized Excursion Module
+Male 1 is currently suffocating on tick: 16521 in module: Laboratory - Pressurized Excursion Module
+Female 1 is currently suffocating on tick: 16521 in module: Laboratory - Pressurized Excursion Module
+Female 1 has died from lack of oxygen (hypoxia) on tick: 16521 with a risk value of: 0.46552
+Female 1 has been killed
+Elapsed time is 1642.713525 seconds.
+Simulation Run Ended: 09-Mar-2015 23:34:54
