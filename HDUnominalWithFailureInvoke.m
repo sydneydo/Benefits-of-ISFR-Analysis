@@ -1067,11 +1067,11 @@ subplot(2,3,5), plot(t,SuitlockO2level(t)./SuitlockTotalMoles(t),'LineWidth',2),
 
 % O2 Partial Pressure
 figure, 
-subplot(2,2,1), plot(t,LabO2level(t)./LabTotalMoles(t).*LabPressure(t),'LineWidth',2), title('Inflatable 1'), grid on, xlabel('Time (hours)'), ylabel('O2 Partial Pressure')
-subplot(2,2,2), plot(t,PCMO2level(t)./PCMTotalMoles(t).*PCMPressure(t),'LineWidth',2), title('Living Unit 1'), grid on, xlabel('Time (hours)'), ylabel('O2 Partial Pressure')
-subplot(2,2,3), plot(t,lifeSupportUnitO2level(t)./lifeSupportUnitTotalMoles(t).*lifeSupportUnitPressure(t),'LineWidth',2), title('Life Support Unit 1'), grid on, xlabel('Time (hours)'), ylabel('O2 Partial Pressure')
-subplot(2,2,4), plot(t,PLMO2level(t)./PLMTotalMoles(t).*PLMPressure(t),'LineWidth',2), title('Cargo Unit 1'), grid on, xlabel('Time (hours)'), ylabel('O2 Partial Pressure')
-
+subplot(2,3,1), plot(t,LabO2level(t)./LabTotalMoles(t).*LabPressure(t),'LineWidth',2), title('Lab'), grid on, xlabel('Time (hours)'), ylabel('O2 Partial Pressure')
+subplot(2,3,2), plot(t,PCMO2level(t)./PCMTotalMoles(t).*PCMPressure(t),'LineWidth',2), title('PCM'), grid on, xlabel('Time (hours)'), ylabel('O2 Partial Pressure')
+subplot(2,3,3), plot(t,PLMO2level(t)./PLMTotalMoles(t).*PLMPressure(t),'LineWidth',2), title('PLM'), grid on, xlabel('Time (hours)'), ylabel('O2 Partial Pressure')
+subplot(2,3,4), plot(t,LoftO2level(t)./LoftTotalMoles(t).*PLMPressure(t),'LineWidth',2), title('Loft'), grid on, xlabel('Time (hours)'), ylabel('O2 Partial Pressure')
+subplot(2,3,5), plot(t,SuitlockO2level(t)./SuitlockTotalMoles(t).*PLMPressure(t),'LineWidth',2), title('Suitlock'), grid on, xlabel('Time (hours)'), ylabel('O2 Partial Pressure')
 
 % CO2 molar fraction
 figure, 
