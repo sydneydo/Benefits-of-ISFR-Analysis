@@ -1,7 +1,7 @@
 %%  Habitation Development Unit / Human Exploration Research Analog Default Simulation Case
 %   By: Sydney Do (sydneydo@mit.edu)
 %   Date Created: 2/7/2015
-%   Last Updated: 2/21/2015
+%   Last Updated: 4/18/2015
 %
 %   Simulation Notes: 
 %   Code to model baseline architecture for the ICES2015 paper entitled:
@@ -10,6 +10,10 @@
 %   (one Martian synodic period). The desired output is the rate of
 %   resupply required over time, as well as the survival time of the crew
 %   when a failure of a particular system occurs
+%
+%   UPDATE 4/18/2015
+%   Added pressure balancer code and restructured time loop to accomodate
+%   this code
 %
 %   UPDATE 2/23/2015
 %   - Turned off fan between suitlock and lab to prevent air exchange
@@ -80,11 +84,12 @@ TotalAtmPressureTargeted = 55;      % EAWG recommended atmosphere for Mars surfa
 O2FractionHypoxicLimit = 0.305;     % lower bound for a 55kPa atm based on EAWG Fig 4.1.1 and Advanced Life Support Requirements Document Fig 4-3
 TargetO2MolarFraction = 0.32; 
 o2fireRiskMolarFraction = 0.6;      % overwrite default value of 0.3 since target O2 fraction is 0.32. We set to 0.6 as this corresponds roughly to the hyperoxia limit for a 55kPA atmosphere (REF: Fig 6.2-2 HIDH)
+idealGasConstant = 8.314;           % J/K/mol
 
 % TotalPPO2Targeted = TargetO2MolarFraction*TotalAtmPressureTargeted;               % targeted O2 partial pressure, in kPa (converted from 26.5% O2)
 
 %% Invoke One-At-A-Time Failure at Given Tick
-FailureTick = 0;%1;
+FailureTick = 1;
 
 ErrorList = {'LabPCA','LoftPCA','PCMPCA','SuitlockPCA','PLMPPRV',...
     'LabCCAA','LoftCCAA','PCMCCAA','SuitlockCCAA','mainvccr','ogs',...
@@ -92,7 +97,7 @@ ErrorList = {'LabPCA','LoftPCA','PCMPCA','SuitlockPCA','PLMPPRV',...
     'waterRS.WPAerror','waterRS.UPAerror','Lab2PCMFan','PLM2PCMFan',...
     'Loft2PCMFan','Lab2AirlockFan'};
 
-SystemToFail = [];%1:5;%[1,12,5,14];
+SystemToFail = 12;%1:5;%[1,12,5,14];
 
 % Determine failure command based on type of technology
 
@@ -194,7 +199,8 @@ MethaneStore = StoreImpl('CH4 Store','Environmental');    % CH4 store for output
 numberOfN2Tanks = 2;% Corresponds to the number of N2 tanks on ISS
 initialN2TankCapacityInKg = 1100; %numberOfN2Tanks*91;
 n2MolarMass = 2*14.007; %g/mol;
-initialN2StoreMoles = initialN2TankCapacityInKg*1E3/n2MolarMass;
+% initialN2StoreMoles = initialN2TankCapacityInKg*1E3/n2MolarMass;
+initialN2StoreMoles = 1260;
 N2Store = StoreImpl('N2 Store','Material',initialN2StoreMoles,initialN2StoreMoles);     
 
 % Power Stores
@@ -211,7 +217,7 @@ DryWasteStore = StoreImpl('Dry Waste','Material',1000000,0);    % Currently wast
 CarriedFood = Wheat;
 AvgCaloriesPerCrewPerson = 3040.1;
 StockedDaysOfFood = ceil(19000/24)+14; % Days worth of food to carry - we initially assume that all food is carried along + 14 days buffer
-CarriedCalories = numberOfCrew*AvgCaloriesPerCrewPerson*StockedDaysOfFood;    % 120 days worth of calories
+CarriedCalories = numberOfCrew*AvgCaloriesPerCrewPerson*StockedDaysOfFood;    % one synodic period's worth of calories
 CarriedTotalMass = CarriedCalories/CarriedFood.CaloriesPerKilogram; % Note that calories per kilogram is on a wet mass basis
 
 initialfood = FoodMatter(Wheat,CarriedTotalMass,CarriedFood.EdibleFreshBasisWaterContent*CarriedTotalMass); % xmlFoodStoreLevel is declared within the createFoodStore method within SimulationInitializer.java
@@ -236,10 +242,20 @@ Lab = SimEnvironmentImpl('Laboratory - Pressurized Excursion Module',55,56000,0.
 Loft = SimEnvironmentImpl('Loft',55,60000,0.32,0.003,0.676,0,0.001,hourlyLeakagePercentage,PotableWaterStore,GreyWaterStore,DirtyWaterStore,DryWasteStore,[LocallyGrownFoodStore,CarriedFoodStore],o2fireRiskMolarFraction);        % Volume reference - X-Hab Solicitation 2010
 PCM = SimEnvironmentImpl('Pressurized Core Module',55,56000,0.32,0.003,0.676,0,0.001,hourlyLeakagePercentage,PotableWaterStore,GreyWaterStore,DirtyWaterStore,DryWasteStore,[LocallyGrownFoodStore,CarriedFoodStore],o2fireRiskMolarFraction);   % All ECLSS technologies are located here
 PLM = SimEnvironmentImpl('Pressurized Logistics Module',55,56000,0.32,0.003,0.676,0,0.001,hourlyLeakagePercentage,PotableWaterStore,GreyWaterStore,DirtyWaterStore,DryWasteStore,[LocallyGrownFoodStore,CarriedFoodStore],o2fireRiskMolarFraction);   % All ECLSS technologies are located here
-% LifeSupportUnit1 = SimEnvironmentImpl('Life Support Unit 1',70.3,25000,0.265,0.003,0.731,0,0.001,hourlyLeakagePercentage,PotableWaterStore,GreyWaterStore,DirtyWaterStore,DryWasteStore,[LocallyGrownFoodStore,CarriedFoodStore]);
-% LifeSupportUnit2 = SimEnvironmentImpl('Life Support Unit 2',70.3,25000,0.265,0.003,0.731,0,0.001,hourlyLeakagePercentage,PotableWaterStore,GreyWaterStore,DirtyWaterStore,DryWasteStore,[LocallyGrownFoodStore,CarriedFoodStore]);
-% CargoUnit1 = SimEnvironmentImpl('Cargo Unit 1',70.3,25000,0.265,0.003,0.731,0,0.001,hourlyLeakagePercentage,PotableWaterStore,GreyWaterStore,DirtyWaterStore,DryWasteStore,[LocallyGrownFoodStore,CarriedFoodStore]);
-% CargoUnit2 = SimEnvironmentImpl('Cargo Unit 2',70.3,25000,0.265,0.003,0.731,0,0.001,hourlyLeakagePercentage,PotableWaterStore,GreyWaterStore,DirtyWaterStore,DryWasteStore,[LocallyGrownFoodStore,CarriedFoodStore]);
+
+%% Airlock Environment
+% This environment is modeled to represent airlock depressurization losses
+% and O2 consumed during EVA prebreathe
+
+% Include airlock PCA (to recharge airlock)
+% Remember to vent airlock for only first tick of EVA
+% Remove this amount of air from the hab everytime an EVA occurs
+
+airlockFreegasVolume = 7.4*1E3; %Obtained from "A Dual Chamber Hybrid Inflatable Suitlock for Planetary Surfaces or Deep Space" %3.7*1E3;     % L (converted from 3.7m^3) REF: BVAD Section 5.2.1 - this is equivalent to shuttle airlock - total volume is 4.25m^3 (pg 230 - The New Field of Space Architecture)
+Suitlock = SimEnvironmentImpl('Suitlock',55,airlockFreegasVolume,0.32,0.003,0.676,0,0.001);      % We assume that the suitlock does not leak
+
+suitlockAirLossVolume = 0.97*0.72*0.0254; % Assumed suitlock loss volume based on suitlock plate dimensions (assuming a 1 inch air gap). REF: Lunar Habitat Airlock/Suitlock (also refer to Space Architecture Book)
+suitlockCycleLoss = Suitlock.pressure*suitlockAirLossVolume/(idealGasConstant*(273.15+Suitlock.temperature));    % REF: ISS Airlock depress pump is operated down to 13.8kPa, so the rest of the air is vented overboard - REF: "Trending of Overboard Leakage of ISS Cabin Atmosphere" (AIAA 2011-5149)
 
 %% Set up EVA environment
 % Size EVA for two people - include airlock losses when EVA is executed
@@ -255,7 +271,6 @@ PLM = SimEnvironmentImpl('Pressurized Logistics Module',55,56000,0.32,0.003,0.67
 %% EVA Consumable Consumption
 % EVAs occur over eight ticks
 numberOfEVAcrew = 2;
-idealGasConstant = 8.314;       % J/K/mol
 O2molarMass = 2*15.999;          % g/mol
 EMUpressure = 29.6; % in kPa - equates to 4.3psi - same as Shuttle EMU and is quoted in EAWG Section 5.1 for dexterous tasks
 EMUvolume = 2*28.3168*numberOfEVAcrew; % Generally between 1.5 and 2 cubic feet [L] - EMU Handbook Section 1.5.5      % in Liters, for two crew members
@@ -323,21 +338,7 @@ EMUo2Tanks = StoreImpl('EMU O2 Bottles','Material',EMUo2TankCapacity*numberOfEVA
 % Note: EMU Food bar is no longer flown (REF:
 % http://spaceflight.nasa.gov/shuttle/reference/faq/eva.html)
 
-%% Airlock Environment
-% This environment is modeled to represent airlock depressurization losses
-% and O2 consumed during EVA prebreathe
-
-% Include airlock PCA (to recharge airlock)
-% Remember to vent airlock for only first tick of EVA
-% Remove this amount of air from the hab everytime an EVA occurs
-
-airlockFreegasVolume = 7.4*1E3; %Obtained from "A Dual Chamber Hybrid Inflatable Suitlock for Planetary Surfaces or Deep Space" %3.7*1E3;     % L (converted from 3.7m^3) REF: BVAD Section 5.2.1 - this is equivalent to shuttle airlock - total volume is 4.25m^3 (pg 230 - The New Field of Space Architecture)
-Suitlock = SimEnvironmentImpl('Airlock',55,airlockFreegasVolume,0.32,0.003,0.676,0,0.001);      % We assume that the suitlock does not leak
-
-suitlockAirLossVolume = 0.97*0.72*0.0254; % Assumed suitlock loss volume based on suitlock plate dimensions (assuming a 1 inch air gap). REF: Lunar Habitat Airlock/Suitlock (also refer to Space Architecture Book)
-suitlockCycleLoss = Suitlock.pressure*suitlockAirLossVolume/(idealGasConstant*(273.15+Suitlock.temperature));    % REF: ISS Airlock depress pump is operated down to 13.8kPa, so the rest of the air is vented overboard - REF: "Trending of Overboard Leakage of ISS Cabin Atmosphere" (AIAA 2011-5149)
-
-% EMU Prebreathe per CrewPerson
+%% EMU Prebreathe per CrewPerson
 % This is the same as that employed for the space shuttle (going from a
 % 70.3kPa 26.5% O2 atmosphere to a 29.6kPa 100% O2 atmosphere
 % - Prebreathe lasts for 40 minutes and is performed in suit (REF: Table
@@ -355,6 +356,17 @@ suitlockCycleLoss = Suitlock.pressure*suitlockAirLossVolume/(idealGasConstant*(2
 % REF: Fifteen-minute EVA Prebreathe Protocol Using NASA's Exploration
 % Atmosphere - AIAA2013-3525 - 0.65lb O2 used per EMU (includes inflation)
 prebreatheO2 = 0.65*453.592/O2molarMass*numberOfEVAcrew;   % moles of O2... supplied from O2 tanks
+
+%% Initialize Pressure Balancer
+% Adjacency Matrix to represent connectivity between modules
+Modules = [PCM,Lab,Loft,Suitlock,PLM];
+AdjacencyMatrix = zeros(length(Modules));
+AdjacencyMatrix(1,[2,3,5]) = 1;
+AdjacencyMatrix(2,1) = 1;
+AdjacencyMatrix(3,[1,4]) = 1;
+AdjacencyMatrix(4,3) = 1;
+AdjacencyMatrix(5,1) = 1;
+PressureFlow = PressureDistribute(Modules,AdjacencyMatrix);
 
 %% Initialize Key Activity Parameters
 
@@ -393,21 +405,21 @@ BiomassStore = BiomassStoreImpl(100000);
 
 CropWaterStore = StoreImpl('Grey Crop H2O','Material',100000,100000);   % Initialize a 9200L water buffer
 
-WhitePotatoShelf = ShelfImpl3(WhitePotato,5,Loft,CropWaterStore,CropWaterStore,MainPowerStore,BiomassStore);
-PeanutShelf = ShelfImpl3(Peanut,72.68,Loft,CropWaterStore,CropWaterStore,MainPowerStore,BiomassStore);
-SoybeanShelf = ShelfImpl3(Soybean,39.7,Loft,CropWaterStore,CropWaterStore,MainPowerStore,BiomassStore);
-SweetPotatoShelf = ShelfImpl3(SweetPotato,9.8,Loft,CropWaterStore,CropWaterStore,MainPowerStore,BiomassStore);
-WheatShelf = ShelfImpl3(Wheat,72.53,Loft,CropWaterStore,CropWaterStore,MainPowerStore,BiomassStore);
+% WhitePotatoShelf = ShelfImpl3(WhitePotato,5,Loft,CropWaterStore,CropWaterStore,MainPowerStore,BiomassStore);
+% PeanutShelf = ShelfImpl3(Peanut,72.68,Loft,CropWaterStore,CropWaterStore,MainPowerStore,BiomassStore);
+% SoybeanShelf = ShelfImpl3(Soybean,39.7,Loft,CropWaterStore,CropWaterStore,MainPowerStore,BiomassStore);
+% SweetPotatoShelf = ShelfImpl3(SweetPotato,9.8,Loft,CropWaterStore,CropWaterStore,MainPowerStore,BiomassStore);
+% WheatShelf = ShelfImpl3(Wheat,72.53,Loft,CropWaterStore,CropWaterStore,MainPowerStore,BiomassStore);
 
 LettuceGrowthArea = 8*8*0.102^2;        % Growth area for atrium within HDU (REF: Plant Atrium System for Food Production in NASA's DSH Tests)
 LettuceShelf = ShelfImpl3(Lettuce,LettuceGrowthArea,Loft,CropWaterStore,CropWaterStore,MainPowerStore,BiomassStore);    % Grow this shelf all together (since total area is <1m^2)
 
 % Initialize Staggered Shelves
-WhitePotatoShelves = ShelfStagger(WhitePotatoShelf,WhitePotatoShelf.Crop.TimeAtCropMaturity,0);
-PeanutShelves = ShelfStagger(PeanutShelf,PeanutShelf.Crop.TimeAtCropMaturity,0);
-SoybeanShelves = ShelfStagger(SoybeanShelf,SoybeanShelf.Crop.TimeAtCropMaturity,0);
-SweetPotatoShelves = ShelfStagger(SweetPotatoShelf,SweetPotatoShelf.Crop.TimeAtCropMaturity,0);
-WheatShelves = ShelfStagger(WheatShelf,WheatShelf.Crop.TimeAtCropMaturity,0);
+% WhitePotatoShelves = ShelfStagger(WhitePotatoShelf,WhitePotatoShelf.Crop.TimeAtCropMaturity,0);
+% PeanutShelves = ShelfStagger(PeanutShelf,PeanutShelf.Crop.TimeAtCropMaturity,0);
+% SoybeanShelves = ShelfStagger(SoybeanShelf,SoybeanShelf.Crop.TimeAtCropMaturity,0);
+% SweetPotatoShelves = ShelfStagger(SweetPotatoShelf,SweetPotatoShelf.Crop.TimeAtCropMaturity,0);
+% WheatShelves = ShelfStagger(WheatShelf,WheatShelf.Crop.TimeAtCropMaturity,0);
 
 %% Initialize FoodProcessor
 FoodProcessor = FoodProcessorImpl;
@@ -602,7 +614,7 @@ SuitlockCCAAoutput = zeros(1,simtime);
 % condensedWaterRemoved = zeros(1,simtime);
 % co2injected = zeros(1,simtime);
 
-lettuceShelfWaterLevel = zeros(1,simtime);
+% lettuceShelfWaterLevel = zeros(1,simtime);
 % peanutShelfWaterLevel = zeros(1,simtime);
 % soybeanShelfWaterLevel = zeros(1,simtime);
 % sweetPotatoShelfWaterLevel = zeros(1,simtime);
@@ -612,7 +624,6 @@ crsH2OProduced = zeros(1,simtime);
 crsCompressorOperation = zeros(2,simtime);
 co2accumulatorlevel = zeros(1,simtime);
 co2removed = zeros(1,simtime);
-% inflatableO2extracted = zeros(1,simtime);
 
 suitlockGasVented = zeros(1,simtime);
 
@@ -716,16 +727,6 @@ for i = 1:simtime
         SuitlockTotalMoles = SuitlockTotalMoles(1:(i-1));
         
         ogsoutput = ogsoutput(1:(i-1));
-%         inflatableO2extracted = inflatableO2extracted(1:(i-1));
-%         condensedWaterRemoved = condensedWaterRemoved(1:(i-1));
-        
-%         whitePotatoShelfWaterLevel = whitePotatoShelfWaterLevel(1:(i-1));
-%         peanutShelfWaterLevel = peanutShelfWaterLevel(1:(i-1));
-%         soybeanShelfWaterLevel = soybeanShelfWaterLevel(1:(i-1));
-%         sweetPotatoShelfWaterLevel = sweetPotatoShelfWaterLevel(1:(i-1));
-%         LettuceShelfWaterLevel = LettuceShelfWaterLevel(1:(i-1));
-%     
-%         LettuceShelfWaterLevel = LettuceShelfWaterLevel(1:(i-1));
         
         % Common Cabin Air Assemblies
         LabCCAAoutput = LabCCAAoutput(1:(i-1));
@@ -849,12 +850,13 @@ for i = 1:simtime
     
     % Run Fans
     Lab2PCMFan.tick;
-%     inflatable2LivingUnitFan2.tick;       % Switch off fan to prevent
-%     atmospheric flow between plant growth chamber and the remainder of
-%     the hab
     PLM2PCMFan.tick;
     Loft2PCMFan.tick;
     Lab2AirlockFan.tick;
+    
+    % Equalize Pressures Across Modules (always put this line directly
+    % after fan ticks)
+    PressureFlow.tick;
     
     % Run Power Supply
     powerPS.tick; 

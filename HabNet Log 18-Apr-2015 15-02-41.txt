@@ -1,0 +1,4 @@
+Simulation Run Started: 18-Apr-2015 15:02:41
+Baseline Simulation Run - With Lettuce & All ISRU
+Failure invoked in PCMCCAA at tick 1
+Elapsed time is 1624.432284 seconds.
