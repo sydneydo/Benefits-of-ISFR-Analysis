@@ -1,0 +1,8 @@
+Simulation Run Started: 19-Apr-2015 00:59:16
+Baseline Simulation Run - With Lettuce & All ISRU
+Failure invoked in LoftCCAA at tick 1
+Failure invoked in PCMCCAA at tick 1
+Male 1 has died from starvation on tick: 17078 with a risk value of: 1e-06
+Male 1 has been killed
+Elapsed time is 608.591594 seconds.
+Simulation Run Ended: 19-Apr-2015 01:09:25

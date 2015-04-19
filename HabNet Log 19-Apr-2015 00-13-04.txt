@@ -1,0 +1,39 @@
+Simulation Run Started: 19-Apr-2015 00:13:04
+Baseline Simulation Run - With Lettuce & All ISRU
+Failure invoked in ogs at tick 1
+Insufficient resources available to fill EMU O2 Bottles. Filling store with as many resources as is available
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 12155
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 12171
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 12174
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 12186
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 12189
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 12201
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 12204
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 12216
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 12219
+Current EVA has been skipped
+Female 2 is currently suffocating on tick: 12279 in module: Loft
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 12283
+Current EVA has been skipped
+Male 1 is currently suffocating on tick: 12284 in module: Pressurized Core Module
+Female 1 is currently suffocating on tick: 12284 in module: Laboratory - Pressurized Excursion Module
+Male 2 is currently suffocating on tick: 12284 in module: Laboratory - Pressurized Excursion Module
+Male 1 is currently suffocating on tick: 12285 in module: Pressurized Logistics Module
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 12286
+Current EVA has been skipped
+Male 1 is currently suffocating on tick: 12287 in module: Loft
+Female 1 is currently suffocating on tick: 12287 in module: Loft
+Male 2 is currently suffocating on tick: 12287 in module: Laboratory - Pressurized Excursion Module
+Female 2 is currently suffocating on tick: 12287 in module: Loft
+Female 2 has died from lack of oxygen (hypoxia) on tick: 12287 with a risk value of: 0.30387
+Female 2 has been killed
+Elapsed time is 308.739858 seconds.
+Simulation Run Ended: 19-Apr-2015 00:18:13
