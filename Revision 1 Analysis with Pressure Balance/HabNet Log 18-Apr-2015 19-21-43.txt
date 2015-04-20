@@ -1,0 +1,9 @@
+Simulation Run Started: 18-Apr-2015 19:21:43
+Baseline Simulation Run - With Lettuce & All ISRU
+Failure invoked in crs.CompressorError at tick 1
+{Operation terminated by user during <a href="matlab:helpUtils.errorDocCallback('SimEnvironmentImpl/tick', 'C:\Users\Sydney Do\Desktop\MIT\PhD Research\ICES2015\Benefits of ISFR Paper\Benefits-of-ISFR-Analysis\Source Code\SimEnvironmentImpl.m', 269)" style="font-weight:bold">SimEnvironmentImpl/tick</a> (<a href="matlab: opentoline('C:\Users\Sydney Do\Desktop\MIT\PhD Research\ICES2015\Benefits of ISFR Paper\Benefits-of-ISFR-Analysis\Source Code\SimEnvironmentImpl.m',269,0)">line 269</a>)
+
+
+In <a href="matlab:helpUtils.errorDocCallback('HDUnominalWithFailureInvoke', 'C:\Users\Sydney Do\Desktop\MIT\PhD Research\ICES2015\Benefits of ISFR Paper\Benefits-of-ISFR-Analysis\HDUnominalWithFailureInvoke.m', 845)" style="font-weight:bold">HDUnominalWithFailureInvoke</a> (<a href="matlab: opentoline('C:\Users\Sydney Do\Desktop\MIT\PhD Research\ICES2015\Benefits of ISFR Paper\Benefits-of-ISFR-Analysis\HDUnominalWithFailureInvoke.m',845,0)">line 845</a>)
+    Lab.tick;
+} 
