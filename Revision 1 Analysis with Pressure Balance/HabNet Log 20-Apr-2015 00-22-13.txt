@@ -1,0 +1,6 @@
+Simulation Run Started: 20-Apr-2015 00:22:13
+Baseline Simulation Run - With Lettuce & All ISRU
+Male 1 has died from starvation on tick: 4053 with a risk value of: 1e-06
+Male 1 has been killed
+Elapsed time is 206.055671 seconds.
+Simulation Run Ended: 20-Apr-2015 00:25:39
