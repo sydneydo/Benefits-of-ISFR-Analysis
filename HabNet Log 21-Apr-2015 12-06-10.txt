@@ -1,0 +1,3 @@
+Simulation Run Started: 21-Apr-2015 12:06:10
+Baseline Simulation Run - With Lettuce & All ISRU
+Elapsed time is 457.009798 seconds.
