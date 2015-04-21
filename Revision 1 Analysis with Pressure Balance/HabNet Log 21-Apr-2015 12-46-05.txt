@@ -1,0 +1,30 @@
+Simulation Run Started: 21-Apr-2015 12:46:05
+Baseline Simulation Run - With Lettuce & All ISRU
+Failure invoked in ogs at tick 1
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 11579
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 11650
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 11666
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 11682
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 11698
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 11701
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 11713
+Current EVA has been skipped
+Insufficient O2 for crew EVA prebreathe or EMU suit fill at tick: 11716
+Current EVA has been skipped
+Male 1 is currently suffocating on tick: 11769 in module: Loft
+Female 2 is currently suffocating on tick: 11769 in module: Loft
+Female 1 is currently suffocating on tick: 11774 in module: Pressurized Core Module
+Male 2 is currently suffocating on tick: 11774 in module: Pressurized Core Module
+Female 1 is currently suffocating on tick: 11775 in module: Pressurized Core Module
+Male 2 is currently suffocating on tick: 11775 in module: Pressurized Core Module
+Male 2 has died from lack of oxygen (hypoxia) on tick: 11775 with a risk value of: 0.5
+Male 2 has been killed
+Female 2 is currently suffocating on tick: 11775 in module: Laboratory - Pressurized Excursion Module
+Elapsed time is 314.462776 seconds.
+Simulation Run Ended: 21-Apr-2015 12:51:19
